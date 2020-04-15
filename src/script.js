@@ -10,8 +10,9 @@ var $ = require('jquery');
 
 $( document ).ready(function() {
   console.log("hi");
-  selectAll(".textFade")
-    .classed("m-fadeOut", true);
+
+    selectAll('.point')  //here's how you get all the nodes
+    .style("opacity", "0")
 });
 
 

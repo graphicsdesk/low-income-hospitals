@@ -69,5 +69,10 @@ body {
 .m-fadeIn {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s linear 0s, opacity 700ms;
+  transition: visibility 0s linear 0s, opacity 1000ms;
+  transition-delay:0.5s;
+}
+
+.snap {
+  height:100%;
 }
