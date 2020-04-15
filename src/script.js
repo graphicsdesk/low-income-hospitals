@@ -1,8 +1,19 @@
 import enterView from 'enter-view';
 import textBalancer from 'text-balancer';
 import { USE_COVER_HED, USE_EYE_NAV } from '../config.json';
-import select from "d3-selection";
 import './scripts/page';
+import './scripts/scrollify';
+import { select } from 'd3-selection';
+import { selectAll } from 'd3-selection';
+var $ = require('jquery');
+
+
+$( document ).ready(function() {
+  console.log("hi");
+  selectAll(".textFade")
+    .classed("m-fadeOut", true);
+});
+
 
 // Fade in navbar at scroll trigger
 
@@ -33,5 +44,3 @@ export function hamburgerTrigger() {
 if (window.innerWidth <= 460) {
   textBalancer.balanceText('.headline, .deck, .image-overlay .image-caption-text');
 }
-
-
