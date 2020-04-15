@@ -18,6 +18,18 @@
       "family": "Roboto,arial,helvetica,sans-serif",
       "weight": "",
       "style": "italic"
+    },
+    {
+      "aifont": "Roboto-LightItalic",
+      "family": "Roboto,arial,helvetica,sans-serif",
+      "weight": "300",
+      "style": "italic"
+    },
+    {
+      "aifont": "Roboto-Light",
+      "family": "Roboto,arial,helvetica,sans-serif",
+      "weight": "300",
+      "style": ""
     }
   ]
 }

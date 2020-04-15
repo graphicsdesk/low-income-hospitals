@@ -1,4 +1,4 @@
-@import 'styles/spectate';
+@import "styles/spectate";
 
 // Uncomment the next line if this project is an full-page Eye lead
 // @import 'styles/eye-lead-ellipsis';
@@ -14,4 +14,47 @@ body {
   height: 300px;
   border: 1px solid red;
   color: red;
+}
+
+.intro {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  .background {
+    position:absolute;
+    z-index:1;
+    top:0;
+    width:97%;
+    height: 100%;
+    background-image: (url("ai2html/storytelling-woooooo-Artboard_1.svg"));
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  p {
+    z-index:2;
+    position: relative;
+    top: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    width: 37%;
+    font-size: 28px;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+    line-height: 40px;
+  }
+  #scroll {
+    top:76.5%;
+    font-family:"Roboto-lightItalic", sans-serif;
+    color:rgb(204,204,204);
+    font-size:26px;
+  }
+}
+.g-pstyle0 {
+  line-height: 6px;
+  height: 32px !important;
+  font-size: 120px;
+  color: rgb(209, 56, 56);
+  position: relative;
+  top: 35px;
 }

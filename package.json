@@ -20,6 +20,8 @@
     "sass": "^1.23.0"
   },
   "dependencies": {
+    "d3": "^5.15.1",
+    "d3-selection": "^1.4.1",
     "enter-view": "^2.0.0",
     "text-balancer": "^1.0.5"
   },
