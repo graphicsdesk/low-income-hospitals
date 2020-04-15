@@ -8,6 +8,7 @@
 body {
   // Arc's overflow hidden on <body> messes up position sticky
   overflow-x: visible !important;
+  background-color:black;
 }
 
 .graphic-name {
@@ -34,7 +35,7 @@ body {
   p {
     z-index:2;
     position: relative;
-    top: 14.5%;
+    top: 7%;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -44,7 +45,7 @@ body {
     line-height: 40px;
   }
   #scroll {
-    top:16%;
+    top:7.5%;
     font-family:"Roboto-lightItalic", sans-serif;
     color:rgb(204,204,204);
     font-size:26px;
@@ -63,16 +64,15 @@ body {
 .m-fadeOut {
   visibility: hidden !important;
   opacity: 0;
-  transition: visibility 0s linear 300ms, opacity 300ms;
+  transition: visibility 0s linear 300ms, opacity 500ms;
 }
 
 .m-fadeIn {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 1000ms;
-  transition-delay:0.5s;
 }
 
 .snap {
-  height:100%;
+  width:100%;
 }

@@ -9,8 +9,6 @@ var $ = require('jquery');
 
 
 $( document ).ready(function() {
-  console.log("hi");
-
     selectAll('.point')  //here's how you get all the nodes
     .style("opacity", "0")
 });
