@@ -41,7 +41,7 @@ $('html').bind('mousewheel', function (e) {
 
         if (onPart == 0) {
             if (selectAll(".textFade1").style("opacity") == 1) {
-                setTimeout(() => { onPart = 1 }, 1000)
+                setTimeout(() => { onPart = 1 }, 1500)
             }
         }
 
@@ -62,7 +62,7 @@ $('html').bind('mousewheel', function (e) {
         } else if (curr == 2 && onPart == 3) {
 
             if (selectAll(".textFade4").style("opacity") == 1) {
-                setTimeout(() => { onPart = 4 }, 500)
+                setTimeout(() => { onPart = 4 }, 1500)
             }
 
         } else if (curr == 2 && onPart == 4) {
@@ -72,7 +72,7 @@ $('html').bind('mousewheel', function (e) {
             selectAll('.grey_point')
                 .each(function (d) {
                     console.log("hi");
-                    var vary = (Math.random() * 8000) + 2000;
+                    var vary = (Math.random() * 10000) + 3000;
 
                     select(this)
                         .transition()
@@ -84,7 +84,8 @@ $('html').bind('mousewheel', function (e) {
                 setTimeout(() => { onPart = 5; }, 500)
             }
 
-        } else {
+        }
+        else {
             //scroll up
             console.log('Up');
         }
@@ -95,13 +96,11 @@ $('html').bind('mousewheel', function (e) {
 function fadeText(onPart) {
     var newPart = onPart + 1;
     selectAll(".textFade" + onPart)
-        .classed("m-fadeIn", false);
-    selectAll(".textFade" + onPart)
+        .classed("m-fadeIn", false)
         .classed("m-fadeOut", true);
     selectAll(".textFade" + newPart)
         .style("transition-delay", "1.5s")
-        .classed("m-fadeIn", true);
-    selectAll(".textFade" + newPart)
+        .classed("m-fadeIn", true)
         .classed("m-fadeOut", false);
 }
 
@@ -109,8 +108,7 @@ function fadeText(onPart) {
 function before(index, sections) {
     for (var i = 1; i < 10; i++) {
         selectAll(".textFade" + i)
-            .classed("m-fadeIn", false);
-        selectAll(".textFade" + i)
+            .classed("m-fadeIn", false)
             .classed("m-fadeOut", true);
     }
 
@@ -119,8 +117,7 @@ function before(index, sections) {
 function checkInstant(index, sections) {
     if (index == 1) {
         selectAll(".textFade1")
-            .classed("m-fadeIn", true);
-        selectAll(".textFade1")
+            .classed("m-fadeIn", true)
             .classed("m-fadeOut", false);
         selectAll('.point')  //here's how you get all the nodes
             .each(function (d) {
@@ -134,10 +131,18 @@ function checkInstant(index, sections) {
     }
     if (index == 2) {
         selectAll(".textFade4")
-            .classed("m-fadeIn", true);
-        selectAll(".textFade4")
+            .classed("m-fadeIn", true)
             .classed("m-fadeOut", false);
 
         onPart = 3;
+    }
+    if (index == 3) {
+        selectAll(".textFade6")
+            .classed("m-fadeIn", true)
+            .classed("m-fadeOut", false);
+        selectAll(".textFade7")
+            .style("transition-delay", "3s")
+            .classed("m-fadeIn", true)
+            .classed("m-fadeOut", false);
     }
 }

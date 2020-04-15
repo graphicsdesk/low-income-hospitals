@@ -8,11 +8,11 @@ import { selectAll } from 'd3-selection';
 var $ = require('jquery');
 
 
-$( document ).ready(function() {
-    selectAll('.point')  //here's how you get all the nodes
+$(document).ready(function () {
+  selectAll('.point')  //here's how you get all the nodes
     .style("opacity", "0")
 
-    selectAll('.grey_point')  //here's how you get all the nodes
+  selectAll('.grey_point')  //here's how you get all the nodes
     .attr("fill", "#D13938")
 });
 
