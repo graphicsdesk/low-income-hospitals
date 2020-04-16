@@ -29,50 +29,61 @@ $(function () {
     });
 });
 
-$('html').bind('mousewheel', function (e) {
+window.addEventListener('wheel', function (e) {
 
-    if (e.originalEvent.wheelDelta < 0) {
+    if (e.deltaY > 0) {
         //scroll down
-        if ((curr == 1 && onPart != 3) || (curr == 2 && onPart != 5)) {
-            $.scrollify.disable();
-        } else {
-            $.scrollify.enable()
-        }
 
         if (onPart == 0) {
             if (selectAll(".textFade1").style("opacity") == 1) {
-                setTimeout(() => { onPart = 1 }, 1500)
+                setTimeout(() => { onPart = 1; }, 1500)
             }
         }
-
         if (curr == 1 && onPart == 1) {
-
             fadeText(onPart);
             if (selectAll(".textFade2").style("opacity") == 1) {
                 setTimeout(() => { onPart = 2; }, 500)
             }
 
         } else if (curr == 1 && onPart == 2) {
-
             fadeText(onPart);
             if (selectAll(".textFade3").style("opacity") == 1) {
                 setTimeout(() => { onPart = 3; }, 500)
             }
 
-        } else if (curr == 2 && onPart == 3) {
-
+        } else if (onPart == 3) {
+            something($.scrollify.next());
             if (selectAll(".textFade4").style("opacity") == 1) {
-                setTimeout(() => { onPart = 4 }, 1500)
+                setTimeout(() => {
+                    onPart = 4;
+                }, 500)
             }
 
         } else if (curr == 2 && onPart == 4) {
-
             fadeText(onPart);
-
             selectAll('.grey_point')
                 .each(function (d) {
-                    console.log("hi");
-                    var vary = (Math.random() * 10000) + 3000;
+                    var vary = (Math.random() * 5000) + 3000;
+                    select(this)
+                        .transition()
+                        .delay(vary)
+                        .attr("fill", "#4D4D4D")
+                })
+            if (selectAll(".textFade5").style("opacity") == 1) {
+                setTimeout(() => { onPart = 5; }, 500)
+            }
+
+        } else if (curr == 2 && onPart == 5) {
+
+            fadeText(onPart);
+            selectAll(".textFade7")
+                .style("transition-delay", "3.5s")
+                .classed("m-fadeIn", true)
+                .classed("m-fadeOut", false);
+
+            selectAll('.grey_point_2')
+                .each(function (d) {
+                    var vary = (Math.random() * 5000) + 3000;
 
                     select(this)
                         .transition()
@@ -80,18 +91,13 @@ $('html').bind('mousewheel', function (e) {
                         .attr("fill", "#4D4D4D")
 
                 })
-            if (selectAll(".textFade5").style("opacity") == 1) {
-                setTimeout(() => { onPart = 5; }, 500)
-            }
+        }
 
-        }
-        else {
-            //scroll up
-            console.log('Up');
-        }
     }
 
 });
+
+
 
 function fadeText(onPart) {
     var newPart = onPart + 1;
@@ -111,8 +117,23 @@ function before(index, sections) {
             .classed("m-fadeIn", false)
             .classed("m-fadeOut", true);
     }
-
+    if (index == 0) {
+        $.scrollify.enable();
+    }
 }
+
+var something = (function (__callback) {
+    var executed = false;
+    return function (__callback) {
+        if (!executed) {
+            executed = true;
+            if (onPart == 3) {
+                $.scrollify.enable();
+                __callback();
+            }
+        }
+    };
+})();
 
 function checkInstant(index, sections) {
     if (index == 1) {
@@ -128,21 +149,15 @@ function checkInstant(index, sections) {
                     .style("opacity", "1");
             });
         onPart = 0;
+        $.scrollify.disable();
     }
     if (index == 2) {
         selectAll(".textFade4")
             .classed("m-fadeIn", true)
             .classed("m-fadeOut", false);
-
         onPart = 3;
+        console.log("got here");
+        $.scrollify.disable();
     }
-    if (index == 3) {
-        selectAll(".textFade6")
-            .classed("m-fadeIn", true)
-            .classed("m-fadeOut", false);
-        selectAll(".textFade7")
-            .style("transition-delay", "3s")
-            .classed("m-fadeIn", true)
-            .classed("m-fadeOut", false);
-    }
+
 }
