@@ -52,7 +52,7 @@ window.addEventListener('wheel', function (e) {
             }
 
         } else if (onPart == 3) {
-            something($.scrollify.next());
+            something();
             if (selectAll(".textFade4").style("opacity") == 1) {
                 setTimeout(() => {
                     onPart = 4;
@@ -93,7 +93,7 @@ window.addEventListener('wheel', function (e) {
                 })
         }
 
-    }
+    } 
 
 });
 
@@ -105,7 +105,7 @@ function fadeText(onPart) {
         .classed("m-fadeIn", false)
         .classed("m-fadeOut", true);
     selectAll(".textFade" + newPart)
-        .style("transition-delay", "1.5s")
+        .style("transition-delay", "1.25s")
         .classed("m-fadeIn", true)
         .classed("m-fadeOut", false);
 }
@@ -122,14 +122,13 @@ function before(index, sections) {
     }
 }
 
-var something = (function (__callback) {
+var something = (function () {
     var executed = false;
-    return function (__callback) {
+    return function () {
         if (!executed) {
             executed = true;
             if (onPart == 3) {
                 $.scrollify.enable();
-                __callback();
             }
         }
     };

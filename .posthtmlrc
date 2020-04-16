@@ -9,20 +9,62 @@
         "top": {},
         "credits": "",
         "headline": "",
-        "date": "",
-        "byline": "",
+        "date": "April 15, 2020",
+        "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a> and <a href=\"https://www.columbiaspectator.com/contributors/Dia-Gill/\">Dia Gill</a>\nData reporting and graphics by <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> and <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a>\nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
         "body": [
           {
             "type": "text",
             "value": "Body text"
           },
           {
+            "type": "graphic",
+            "value": {
+              "asset": "x.html"
+            }
+          },
+          {
             "type": "text",
-            "value": "<i>X</i><i> is a X at Spectator. X can be contacted at X</i>. (Optional follow X on Twitter @)"
+            "value": "<i>Valeria Escobar</i><i> is a News editor at Spectator. She can be contacted at </i><a href=\"mailto:valeria.escobar@columbiaspectator.com\"><i>valeria.escobar@columbiaspectator.</i></a><a href=\"mailto:valeria.escobar@columbiaspectator.com\">com</a>. <i>(Optional: Follow X on Twitter @)"
+          },
+          {
+            "type": "text",
+            "value": "</i>"
+          },
+          {
+            "type": "text",
+            "value": "<i>Dia Gill is a staff writer(?) at Spectator. She can be contacted at </i><a href=\"mailto:dia.gill@columbiaspectator.com\"><i>dia.gill@columbiaspectator.com</i></a>. <i>(Optional: Follow X on Twitter @)"
+          },
+          {
+            "type": "text",
+            "value": "</i><i>"
+          },
+          {
+            "type": "text",
+            "value": "</i><i>Raeedah Wahid is the Graphics editor at Spectator. She can be contacted at </i><a href=\"mailto:raeedah.wahid@columbiaspectator.com\"><i>raeedah.wahid@columbiaspectator.com</i></a>. <i>Follow her on Twitter </i><a href=\"https://twitter.com/raeedahwahid\"><i>@raeedahwahid</i></a><i>."
+          },
+          {
+            "type": "text",
+            "value": "</i><i>"
+          },
+          {
+            "type": "text",
+            "value": "</i><i>Mike Fu is a Graphics reporter at Spectator. He can be contacted at </i><a href=\"mailto:mike.fu@columbiaspectator.com\"><i>mike.fu@columbiaspectator.com</i></a>. <i>(Optional: Follow X on Twitter @)"
+          },
+          {
+            "type": "text",
+            "value": "</i><i>"
+          },
+          {
+            "type": "text",
+            "value": "</i><i>Hong Sen Du is a developer at Spectator. He can be contacted at </i><a href=\"mailto:hongsen.du@columbiaspectator.com\"><i>hongsen.du@columbiaspectator.com</i></a><i>."
+          },
+          {
+            "type": "text",
+            "value": "</i>"
           }
         ],
-        "methodology": "<b>About the numbers\n</b>\nText",
-        "footer": "<a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a> is a developer at Spectator. Additional work/reporting?\n\nProduced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team.",
+        "methodology": "<b>About the numbers</b>\n\nUsing <a href=\"https://developers.google.com/places/web-service/intro\">Google’s Place AP</a>I, we can convert an address of a hospital to its respective latitude and longitude. Since Open Data NTA Tabulation Areas represents each neighborhood as a polygon with vertices consisting of latitude and longitude, we can locate the neighborhood of each hospital using its latitude and longitude. We then retrieved the median income by zip code, and matched it with the corresponding neighborhood using the Place APi.\n\n\nTo determine the accessibility of a hospital by walking…\nUsed 0.2, 0.3, 0.5 mi\n0.3 representing walkable distance\n0.5 is overstretched\nAssumed variables from research: <a href=\"https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=5148&context=etd\">https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=5148&context=etd</a> \n\nThere may be discrepancies between the numbers of beds reported by NY State Department of Health and hospitals themselves. Spectator did not represent updated hospital bed numbers as a result of the COVID-19 outbreak because numbers are in constant flux. \n\nView our data collection and analysis <a href=\"https://github.com/spec-journalism/hospital-data\">here</a>.\n\nText",
+        "footer": "Produced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team.",
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,
         "DOC_URL": "https://docs.google.com/document/d/1c6DJDYFX5VOFkblFQKXitbs5GxF2gpMX2mSqKc3SoQM/edit?usp=sharing"
