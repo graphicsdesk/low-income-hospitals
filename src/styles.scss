@@ -92,20 +92,18 @@ body {
     }
     #scroll {
       top: 50% !important;
-     
     }
-
   }
-  #g-storytelling-woooooo-Artboard_2{
-    position:relative;
-    top:400px;
+  #g-storytelling-woooooo-Artboard_2 {
+    position: relative;
+    top: 400px;
   }
-  #g-ai1-3{
-    margin-top:-400px !important;
-    margin-left:-170px !important;
+  #g-ai1-3 {
+    margin-top: -400px !important;
+    margin-left: -170px !important;
   }
   #g-storytelling-woooooo-Artboard_18-img {
-    margin-top:400px;
+    margin-top: 400px;
   }
   #g-ai2-1 {
     margin-top: 230px !important;
@@ -120,12 +118,12 @@ body {
     margin-top: -20% !important;
   }
   #g-ai3-3 {
-    margin-top:-400px !important;
-    margin-left:-230px !important;
+    margin-top: -400px !important;
+    margin-left: -230px !important;
   }
   #g-ai3-30 {
-    margin-top:-400px !important;
-    margin-left:-200px !important;
+    margin-top: -400px !important;
+    margin-left: -200px !important;
   }
 }
 @media screen and (max-width: 1100px) and (min-width: 1000px) and (max-height: 800px) and (min-height: 650px) {
@@ -149,10 +147,74 @@ body {
 @media screen and (min-height: 750px) {
   .intro {
     p {
+      top: 70%;
+    }
+    #scroll {
+      top: 75%;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .intro {
+    .background {
+      top: -10%;
+      width: 100%;
+      background-image: (url("ai2html/mobile-lead-Artboard_1.svg"));
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    p {
+      top: 60%;
+      width: 80%;
+      font-size: 20px;
+    }
+    #scroll {
+      top: 65%;
+      font-size: 26px;
+    }
+  }
+}
+@media screen and (max-width: 600px) and (max-height: 700px) {
+  //iPhone 6, 7, 8
+  .intro {
+    position: relative;
+    top: -8%;
+    left:2%;
+    p {
+      top: 62%;
+    }
+    #scroll {
+      top: 65%;
+    }
+  }
+}
+@media screen and (max-width: 600px) and (max-height: 800px) and (min-height: 700px) {
+  //iPhone 6, 7, 8 Plus
+  .intro {
+    position: relative;
+    top: -10%;
+    p {
       top: 65%;
     }
     #scroll {
       top: 70%;
     }
+  }
+}
+@media screen and (max-width: 600px) and (max-height: 850px) and (min-height: 800px) {
+  //iPhone X
+  .intro {
+    position: relative;
+    top: -10%;
+    left:2%;
+    p {
+      top: 57.5%;
+    }
+    #scroll {
+      top: 62%;
+    }
+  }
+  .snap {
+    height: 1000px;
   }
 }
