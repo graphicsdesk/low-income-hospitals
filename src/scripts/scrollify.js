@@ -8,7 +8,6 @@ var curr = 0;
 var onPart = 0;
 
 var $ = require('jquery');
-var lastScrollTop = window.pageYOffset;
 $(function () {
     $.scrollify({
         section: ".snap",
@@ -17,11 +16,11 @@ $(function () {
         scrollSpeed: 1200,
         offset: 0,
         scrollbars: false,
-        standardScrollElements: ".inside",
+        standardScrollElements: "",
         setHeights: false,
-        overflowScroll: true,
+        overflowScroll: false,
         updateHash: true,
-        touchScroll: true,
+        touchScroll: false,
         before: function (index, sections) { before(index, sections) },
         after: function (index, sections) { checkInstant(index, sections); curr = index },
         afterResize: function () { },
