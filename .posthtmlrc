@@ -8,7 +8,7 @@
       "locals": {
         "top": {},
         "credits": "",
-        "headline": "",
+        "headline": "Filler",
         "date": "April 15, 2020",
         "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a> and <a href=\"https://www.columbiaspectator.com/contributors/Dia-Gill/\">Dia Gill</a>\nData reporting and graphics by <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> and <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a>\nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
         "body": [
@@ -67,7 +67,7 @@
         "footer": "Produced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team.",
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,
-        "DOC_URL": "https://docs.google.com/document/d/1c6DJDYFX5VOFkblFQKXitbs5GxF2gpMX2mSqKc3SoQM/edit?usp=sharing"
+        "DOC_URL": "https://docs.google.com/document/d/1c6DJDYFX5VOFkblFQKXitbs5GxF2gpMX2mSqKc3SoQM/edit"
       }
     }
   }

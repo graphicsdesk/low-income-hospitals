@@ -17,8 +17,8 @@ $(function () {
         scrollSpeed: 1200,
         offset: 0,
         scrollbars: false,
-        standardScrollElements: "",
-        setHeights: true,
+        standardScrollElements: ".inside",
+        setHeights: false,
         overflowScroll: true,
         updateHash: true,
         touchScroll: true,
@@ -29,8 +29,9 @@ $(function () {
     });
 });
 
-window.addEventListener('wheel', function (e) {
+window.addEventListener('wheel', function (e) { animationInstruct(e) });
 
+function animationInstruct(e) {
     if (e.deltaY > 0) {
         //scroll down
 
@@ -74,28 +75,29 @@ window.addEventListener('wheel', function (e) {
             }
 
         } else if (curr == 2 && onPart == 5) {
-
             fadeText(onPart);
             selectAll(".textFade7")
                 .style("transition-delay", "3.5s")
                 .classed("m-fadeIn", true)
                 .classed("m-fadeOut", false);
-
             selectAll('.grey_point_2')
                 .each(function (d) {
                     var vary = (Math.random() * 5000) + 3000;
-
                     select(this)
                         .transition()
                         .delay(vary)
                         .attr("fill", "#4D4D4D")
-
                 })
+            if (selectAll(".textFade7").style("opacity") == 1) {
+                setTimeout(() => { finish() }, 1000);
+            }
+
         }
 
-    } 
+    }
 
-});
+
+}
 
 
 
@@ -134,6 +136,37 @@ var something = (function () {
     };
 })();
 
+var finish = (function () {
+    var executed = false;
+    return function () {
+        if (!executed) {
+            executed = true;
+            $.scrollify.enable();
+            $.scrollify.move(3);
+        }
+    };
+})();
+
+var rtime;
+var timeout = false;
+var delta = 200;
+$(window).resize(function () {
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(resizeend, delta);
+    }
+});
+
+function resizeend() {
+    if (new Date() - rtime < delta) {
+        setTimeout(resizeend, delta);
+    } else {
+        timeout = false;
+        location.reload();
+    }
+}
+
 function checkInstant(index, sections) {
     if (index == 1) {
         selectAll(".textFade1")
@@ -157,6 +190,23 @@ function checkInstant(index, sections) {
         onPart = 3;
         console.log("got here");
         $.scrollify.disable();
+    }
+    if (index == 3) {
+        $.scrollify.disable();
+        window.removeEventListener("window", animationInstruct);
+        document.getElementsByTagName("body")[0].style = "overflow: visible !important";
+        selectAll(".makeInv")
+            .style("display", "none")
+        selectAll('.grey_point')  //here's how you get all the nodes
+            .attr("fill", "#4D4D4D")
+        selectAll('.grey_point_2')
+            .attr("fill", "#4D4D4D")
+        selectAll(".textFade6")
+            .classed("m-fadeIn", true)
+            .classed("m-fadeOut", false);
+        selectAll(".textFade7")
+            .classed("m-fadeIn", true)
+            .classed("m-fadeOut", false);
     }
 
 }
