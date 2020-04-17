@@ -16,9 +16,9 @@ $(function () {
         scrollSpeed: 1200,
         offset: 0,
         scrollbars: false,
-        standardScrollElements: "",
+        standardScrollElements: ".article",
         setHeights: false,
-        overflowScroll: true,
+        overflowScroll: false,
         updateHash: true,
         touchScroll: true,
         before: function (index, sections) { before(index, sections) },
@@ -130,7 +130,6 @@ var loading = false;
 
 var handle = function (e) { if (!loading) { loading = true; animationInstruct(e); loading = false } }
 
-window.addEventListener('wheel', handle);
 
 function animationInstruct(e) {
     if (e.deltaY > 0) {
@@ -202,12 +201,14 @@ function animationInstruct(e) {
         }
 
     } else if (e.deltaY < 0) {
-        console.log("boi");
         goBack();
     }
 
 
 }
+
+window.addEventListener('wheel', handle);
+
 
 
 function enable(_callback) {
@@ -309,8 +310,12 @@ function checkInstant(index, sections) {
     }
 
     if (index == 3) {
+        console.log(("hi"));
+        window.removeEventListener("wheel", handle);
+        window.removeEventListener("touchstart", touch);
+        window.removeEventListener("touchend", end);
         onPart = 4;
-        $.scrollify.destroy();
+        $.scrollify.disable();
         cleanup();
     }
 
@@ -318,9 +323,7 @@ function checkInstant(index, sections) {
 
 function cleanup() {
     setTimeout(() => { canGo = false; }, 2000);
-    window.removeEventListener("window", handle);
-    window.removeEventListener("window", touch);
-    window.removeEventListener("window", end);
+ 
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     selectAll(".makeInv")
         .style("display", "none")
