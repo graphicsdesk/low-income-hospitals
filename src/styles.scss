@@ -7,6 +7,7 @@
 
 body {
   // Arc's overflow hidden on <body> messes up position sticky
+  position: relative;
   overflow-x: visible !important;
   background-color: black;
 }
