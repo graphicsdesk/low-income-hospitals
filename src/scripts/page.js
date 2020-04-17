@@ -1,3 +1,5 @@
+import resizer from './ai2html-resizer';
+
 /* Scripts that should be on every Spectate page */
 
 const isOnSpectatorPage = window.location.host === 'www.columbiaspectator.com';
@@ -41,6 +43,8 @@ function hoistArticle() {
     // If the paragraph includes <meta> or <link> tags, it's probably our SSR'd <head>
     suspectParagraph.style.margin = 0;
   }
+
+  resizer();
 }
 
 // Runs hoistArticle() and stops RAF when necessary elements exist.
