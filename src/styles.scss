@@ -88,6 +88,9 @@ body {
 }
 @media screen and (max-width: 800px) and (min-width: 600px) and (max-height: 1200px) and (min-height: 800px) {
   // ipad vertical
+  #g-mobile-lead-Artboard_1_copy_2,#g-mobile-lead-Artboard_4 {
+    display:none;
+  }
   .snap {
     height: 1500px;
   }
@@ -121,6 +124,9 @@ body {
 }
 @media screen and (max-width: 1100px) and (min-width: 1000px) and (max-height: 800px) and (min-height: 650px) {
   // ipad horizontal
+  #g-mobile-lead-Artboard_1_copy_2,#g-mobile-lead-Artboard_4 {
+    display:none;
+  }
   #g-storytelling-woooooo-Artboard_18,
   #g-storytelling-woooooo-Artboard_2 {
     top: 100px !important;
@@ -163,6 +169,9 @@ body {
       top: 65%;
       font-size: 26px;
     }
+  }
+  #g-mobile-lead-Artboard_4, #g-mobile-lead-Artboard_1_copy_2 {
+    top:30px;
   }
   .snap {
     overflow: hidden !important;

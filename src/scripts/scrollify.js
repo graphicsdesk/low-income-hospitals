@@ -31,7 +31,7 @@ var delay = 500;
 var delay2 = 1500;
 if (window.screen.width < 750) {
     delay = 1500;
-    delay2 = 4500;
+    delay2 = 5000;
 }
 window.addEventListener('wheel', function (e) { animationInstruct(e) });
 
