@@ -28,50 +28,50 @@
     <include src="graphic2.html"></include>
   </div>
 
-    <div class="snap article">
-      <if condition="USE_COVER_HED">
-        <include src="partials/header-cover.html"></include>
-      </if>
-      <else>
-        <include src="partials/header.html"></include>
-      </else>
+  <div class="snap article">
+    <if condition="USE_COVER_HED">
+      <include src="partials/header-cover.html"></include>
+    </if>
+    <else>
+      <include src="partials/header.html"></include>
+    </else>
 
-      <div class="story">
-        <each loop="item in body">
-          <switch expression="item.type">
-            <case n="'text'">
-              <include src="partials/paragraph.html"></include>
-            </case>
-            <case n="'subhed'">
-              <include src="partials/subhed.html"></include>
-            </case>
-            <case n="'image'">
-              <include src="partials/image.html"></include>
-            </case>
-            <case n="'graphic'">
-              <div class="graphic">
-                <if condition="item.value.asset === 'income-levels.html'">
-                  <include src="./income-levels.html"></include>
-                </if>
-                <if condition="item.value.asset === 'beds.html'">
-                  <include src="./beds.html"></include>
-                </if>
-                <if condition="item.value.asset === 'buffer.html'">
-                  <include src="./buffer.html"></include>
-                </if>
-                <if condition="item.value.asset === 'transit.html'">
-                  <include src="./transit.html"></include>
-                </if>
-              </div>
-            </case>
-          </switch>
-        </each>
-      </div>
-      <div class="spectate-dev-footer">
-        <a href="{{ DOC_URL }}" target="_blank">Doc</a>
-      </div>
-      <include src="partials/footer.html"></include>
+    <div class="story">
+      <each loop="item in body">
+        <switch expression="item.type">
+          <case n="'text'">
+            <include src="partials/paragraph.html"></include>
+          </case>
+          <case n="'subhed'">
+            <include src="partials/subhed.html"></include>
+          </case>
+          <case n="'image'">
+            <include src="partials/image.html"></include>
+          </case>
+          <case n="'graphic'">
+            <div class="graphic">
+              <if condition="item.value.asset === 'income-levels.html'">
+                <include src="./income-levels.html"></include>
+              </if>
+              <if condition="item.value.asset === 'beds.html'">
+                <include src="./beds.html"></include>
+              </if>
+              <if condition="item.value.asset === 'buffer.html'">
+                <include src="./buffer.html"></include>
+              </if>
+              <if condition="item.value.asset === 'transit.html'">
+                <include src="./transit.html"></include>
+              </if>
+            </div>
+          </case>
+        </switch>
+      </each>
     </div>
+    <div class="spectate-dev-footer">
+      <a href="{{ DOC_URL }}" target="_blank">Doc</a>
+    </div>
+    <include src="partials/footer.html"></include>
+  </div>
   </div>
   <script src="./script.js"></script>
 

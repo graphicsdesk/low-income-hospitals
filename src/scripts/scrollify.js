@@ -325,6 +325,8 @@ function cleanup() {
     setTimeout(() => { canGo = false; }, 2000);
  
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
+    document.getElementsByTagName("body")[0].style = "background-color:white;";
+
     selectAll(".makeInv")
         .style("display", "none")
     selectAll('.grey_point')  //here's how you get all the nodes
