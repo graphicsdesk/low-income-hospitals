@@ -85,6 +85,10 @@ body {
   width: 100%;
   height: 800px;
 }
+.map {
+  font-family: Roboto, arial, helvetica, sans-serif !important;
+  font-weight: 300 !important;
+}
 @media screen and (max-width: 800px) and (min-width: 600px) and (max-height: 1200px) and (min-height: 800px) {
   // ipad vertical
   #g-mobile-lead-Artboard_1_copy_2,
@@ -121,6 +125,12 @@ body {
     margin-top: -400px !important;
     margin-left: -200px !important;
   }
+  .snap {
+    background-color: black;
+  }
+  .article {
+    background-color: white !important;
+  }
 }
 @media screen and (max-width: 1100px) and (min-width: 1000px) and (max-height: 800px) and (min-height: 650px) {
   // ipad horizontal
@@ -141,6 +151,12 @@ body {
       top: 65% !important;
     }
   }
+  .snap {
+    background-color: black;
+  }
+  .article {
+    background-color: white !important;
+  }
 }
 @media screen and (min-height: 750px) {
   .intro {
@@ -152,7 +168,7 @@ body {
     }
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 750px) {
   .intro {
     .background {
       top: -10%;
@@ -222,7 +238,6 @@ body {
   }
   .article {
     height: 11400px !important;
-  
   }
 }
 @media screen and (max-width: 600px) and (max-height: 700px) {
