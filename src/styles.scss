@@ -299,16 +299,32 @@ body {
     position: relative;
     top: -15%;
     p {
-      top: 62% !important;
-    }
-    #scroll {
       top: 64% !important;
     }
+    #scroll {
+      top: 70% !important;
+    }
   }
-  .snap {
-    height: 1000px;
-  }
+
   .snap:not(.article) {
-    height: 600px;
+    height: 700px;
+  }
+  #g-ai2-2 {
+    top: 40% !important;
+  }
+  #g-ai2-3 {
+    top: 50% !important;
+  }
+  #g-ai2-4 {
+    top: 54% !important;
+  }
+  #g-ai2-5 {
+    top: 62.5% !important;
+  }
+  #g-ai2-6 {
+    top: 71% !important;
+  }
+  #g-ai2-1 {
+    top:150px !important;
   }
 }
