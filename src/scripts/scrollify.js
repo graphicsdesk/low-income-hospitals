@@ -27,7 +27,10 @@ $(function () {
         afterRender: function () { }
     });
 });
-
+var delay = 500;
+if (window.screen.width < 750) {
+    delay = 1500;
+}
 window.addEventListener('wheel', function (e) { animationInstruct(e) });
 
 function animationInstruct(e) {
@@ -42,7 +45,7 @@ function animationInstruct(e) {
         if (curr == 1 && onPart == 1) {
             fadeText(onPart);
             if (selectAll(".textFade2").style("opacity") == 1) {
-                setTimeout(() => { onPart = 2; }, 500)
+                setTimeout(() => { onPart = 2; }, delay)
             }
 
         } else if (curr == 1 && onPart == 2) {
@@ -167,7 +170,7 @@ function checkInstant(index, sections) {
             .classed("m-fadeOut", false);
         selectAll('.point')  //here's how you get all the nodes
             .each(function (d) {
-                var vary = (Math.random() * (1.5) + 2) + "s";
+                var vary = (Math.random() * (1.5) + 1) + "s";
                 select(this)
                     .style("transition", "visibility 0s linear 0s, opacity 400ms")
                     .style("transition-delay", vary)
