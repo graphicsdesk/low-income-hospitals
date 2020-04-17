@@ -6,7 +6,7 @@ import "d3-transition";
 
 var curr = 0;
 var onPart = 0;
-
+var canGo = true;
 var $ = require('jquery');
 $(function () {
     $.scrollify({
@@ -53,34 +53,31 @@ window.addEventListener('touchend', function (event) {
 
 function handleGesture() {
     if (touchendY >= touchstartY) {
-        // swipe down
+        goBack();
     }
 
     if (touchendY <= touchstartY) {
         if (onPart == 0) {
             if (selectAll(".textFade1").style("opacity") == 1) {
-                setTimeout(() => { onPart = 1; }, 1500)
+                onPart = 1;
             }
         }
         if (curr == 1 && onPart == 1) {
             fadeText(onPart);
             if (selectAll(".textFade2").style("opacity") == 1) {
-                setTimeout(() => { onPart = 2; }, delay)
+                onPart = 2;
             }
 
         } else if (curr == 1 && onPart == 2) {
             fadeText(onPart);
             if (selectAll(".textFade3").style("opacity") > 0.5) {
-                setTimeout(() => {
-                    something();
-                }, 500)
+                onPart = 3;
+                something();
             }
 
         } else if (onPart == 3) {
             if (selectAll(".textFade4").style("opacity") == 1) {
-                setTimeout(() => {
-                    onPart = 4;
-                }, 500)
+                onPart = 4;
             }
 
         } else if (curr == 2 && onPart == 4) {
@@ -126,8 +123,9 @@ function handleGesture() {
         }
     }
 }
+var loading = false;
 
-window.addEventListener('wheel', function (e) { animationInstruct(e) });
+window.addEventListener('wheel', function (e) { if (!loading) { loading = true; animationInstruct(e); loading = false } });
 
 function animationInstruct(e) {
     if (e.deltaY > 0) {
@@ -135,28 +133,25 @@ function animationInstruct(e) {
 
         if (onPart == 0) {
             if (selectAll(".textFade1").style("opacity") == 1) {
-                setTimeout(() => { onPart = 1; }, 1500)
+                onPart = 1;
             }
         }
         if (curr == 1 && onPart == 1) {
             fadeText(onPart);
             if (selectAll(".textFade2").style("opacity") == 1) {
-                setTimeout(() => { onPart = 2; }, delay)
+                onPart = 2;
             }
 
         } else if (curr == 1 && onPart == 2) {
             fadeText(onPart);
             if (selectAll(".textFade3").style("opacity") > 0.5) {
-                setTimeout(() => {
-                    something();
-                }, 500)
+                onPart = 3;
+                something();
             }
 
         } else if (onPart == 3) {
             if (selectAll(".textFade4").style("opacity") == 1) {
-                setTimeout(() => {
-                    onPart = 4;
-                }, 500)
+                onPart = 4;
             }
 
         } else if (curr == 2 && onPart == 4) {
@@ -201,11 +196,34 @@ function animationInstruct(e) {
 
         }
 
+    } else if (e.deltaY < 0) {
+        goBack();
     }
 
 
 }
 
+
+function enable(_callback) {
+    // do some asynchronous work
+    // and when the asynchronous stuff is complete
+    canGo = false;
+    $.scrollify.enable();
+    _callback();
+}
+
+var goBack = function () {
+    if (canGo) {
+        enable(function () {
+            $.scrollify.previous();
+            console.log(curr);
+        });
+        setTimeout(function () {
+            canGo = true;
+        }, 4000)
+    } else {
+    }
+}
 
 
 function fadeText(onPart) {
@@ -220,28 +238,25 @@ function fadeText(onPart) {
 }
 
 
+
 function before(index, sections) {
     for (var i = 1; i < 10; i++) {
         selectAll(".textFade" + i)
             .classed("m-fadeIn", false)
             .classed("m-fadeOut", true);
     }
-    if (index == 0) {
-        $.scrollify.enable();
-    }
 }
 
 var something = (function () {
-    var executed = false;
-    return function () {
-        if (!executed) {
-            executed = true;
-            onPart = 3;
-            $.scrollify.enable();
-
-        }
-    };
-})();
+    if (canGo) {
+        canGo = false;
+        $.scrollify.enable();
+        setTimeout(function () {
+            canGo = true;
+        }, 2000)
+    } else {
+    }
+})
 
 
 var finish = (function () {
@@ -260,6 +275,9 @@ var finish = (function () {
 
 
 function checkInstant(index, sections) {
+    if (index == 0) {
+        $.scrollify.enable();
+    }
     if (index == 1) {
         selectAll(".textFade1")
             .classed("m-fadeIn", true)
@@ -283,6 +301,7 @@ function checkInstant(index, sections) {
         console.log("got here");
         $.scrollify.disable();
     }
+
     if (index == 3) {
         $.scrollify.disable();
         cleanup();
@@ -291,7 +310,9 @@ function checkInstant(index, sections) {
 }
 
 function cleanup() {
+    canGo = false;
     window.removeEventListener("window", animationInstruct);
+    window.removeEventListener("window", handleGesture);
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     selectAll(".makeInv")
         .style("display", "none")
