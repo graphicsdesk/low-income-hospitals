@@ -1,7 +1,7 @@
 {
-  "headline": "Black residents are more likely to be sick. Hospitals are disincentivized from treating them.",
+  "headline": "Segregation exposes Black residents to health risks. Hospitals are disincentivized from treating them.",
   "date": "April 17, 2020",
-  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a>\nData reporting and graphics by <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> and <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a>\nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
+  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a>\nData reporting and graphics by <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a> and <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> \nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
   "body": [
     {
       "type": "text",
@@ -25,7 +25,7 @@
     },
     {
       "type": "text",
-      "value": "Harlem would grow increasingly Black, but sale to the five institutions ensured that Morningside Heights would be an enclave of rich, white residents."
+      "value": "Harlem would grow increasingly Black, but sale to the five institutions ensured that Morningside Heights would be an enclave of largely wealthy, white residents."
     },
     {
       "type": "text",
@@ -129,36 +129,21 @@
     },
     {
       "type": "text",
-      "value": "<i>Valeria Escobar</i><i> is a News editor at Spectator. She can be contacted at </i><a href=\"mailto:valeria.escobar@columbiaspectator.com\"><i>valeria.escobar@columbiaspectator.</i></a><a href=\"mailto:valeria.escobar@columbiaspectator.com\">com</a>. <i>Follow Spectator on Twitter at </i><a href=\"https://twitter.com/ColumbiaSpec?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\"><i>@ColumbiaSpec</i></a><i>."
+      "value": "<i>Valeria Escobar</i><i> is a News editor at Spectator. She can be contacted at </i><a href=\"mailto:valeria.escobar@columbiaspectator.com\"><i>valeria.escobar@columbiaspectator.</i></a><a href=\"mailto:valeria.escobar@columbiaspectator.com\">com</a>. <i>Follow Spectator on Twitter at </i><a href=\"https://twitter.com/ColumbiaSpec?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\"><i>@ColumbiaSpec</i></a><i>.</i>"
     },
     {
       "type": "text",
-      "value": "</i>"
+      "value": "<i>Raeedah Wahid is the Graphics editor at Spectator. She can be contacted at </i><a href=\"mailto:raeedah.wahid@columbiaspectator.com\"><i>raeedah.wahid@columbiaspectator.com</i></a>. <i>Follow her on Twitter </i><a href=\"https://twitter.com/raeedahwahid\"><i>@raeedahwahid</i></a><i>.</i>"
     },
     {
       "type": "text",
-      "value": "<i>Mike Fu is a Graphics reporter at Spectator. He can be contacted at </i><a href=\"mailto:mike.fu@columbiaspectator.com\"><i>mike.fu@columbiaspectator.com</i></a>. <i>"
+      "value": "<i>Mike Fu is a Graphics reporter at Spectator. He can be contacted at </i><a href=\"mailto:mike.fu@columbiaspectator.com\"><i>mike.fu@columbiaspectator.com</i></a>."
     },
     {
       "type": "text",
-      "value": "</i><i>"
-    },
-    {
-      "type": "text",
-      "value": "</i><i>Raeedah Wahid is the Graphics editor at Spectator. She can be contacted at </i><a href=\"mailto:raeedah.wahid@columbiaspectator.com\"><i>raeedah.wahid@columbiaspectator.com</i></a>. <i>Follow her on Twitter </i><a href=\"https://twitter.com/raeedahwahid\"><i>@raeedahwahid</i></a><i>."
-    },
-    {
-      "type": "text",
-      "value": "</i><i>"
-    },
-    {
-      "type": "text",
-      "value": "</i><i>Hong Sen Du is a developer at Spectator. He can be contacted at </i><a href=\"mailto:hongsen.du@columbiaspectator.com\"><i>hongsen.du@columbiaspectator.com</i></a><i>."
-    },
-    {
-      "type": "text",
-      "value": "</i>"
+      "value": "<i>Hong Sen Du is a developer at Spectator. He can be contacted at </i><a href=\"mailto:hongsen.du@columbiaspectator.com\"><i>hongsen.du@columbiaspectator.com</i></a><i>.</i>"
     }
   ],
-  "footer": "Data on the numbers of beds reported by <a href=\"https://profiles.health.ny.gov/hospital/alpha\">NY State Department of Health</a>, which was utilized in the reporting above, differs slightly from those reported by hospitals themselves. Spectator did not represent updated hospital bed numbers as a result of the COVID-19 outbreak because this data is subject to rapid change. \n\nNeighborhood and transit shapefiles were retrieved from <a href=\"https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas-NTA-/cpf4-rkhq\">NYC Open Data</a> and the <a href=\"https://www.baruch.cuny.edu/confluence/pages/viewpage.action?pageId=28016896\">GIS Lab at the Newman Library of Baruch College, CUNY</a>, respectively.\n\n\n\nProduced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team."
+  "methodology": "Data on the numbers of beds reported by <a href=\"https://profiles.health.ny.gov/hospital/alpha\">NY State Department of Health</a>, which was utilized in the reporting above, differs slightly from those reported by hospitals themselves. Spectator did not represent updated hospital bed numbers as a result of the COVID-19 outbreak because this data is subject to rapid change. \n\nNeighborhood and transit shapefiles were retrieved from <a href=\"https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas-NTA-/cpf4-rkhq\">NYC Open Data</a> and the <a href=\"https://www.baruch.cuny.edu/confluence/pages/viewpage.action?pageId=28016896\">GIS Lab at the Newman Library of Baruch College, CUNY</a>, respectively.\n\n<i>Interested in learning about how our graphics team and news reporters put this story together? Read about our process here</i><b>.</b>",
+  "footer": ""
 }

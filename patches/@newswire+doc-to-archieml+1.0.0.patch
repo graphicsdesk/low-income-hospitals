@@ -1,8 +1,8 @@
 diff --git a/node_modules/@newswire/doc-to-archieml/index.js b/node_modules/@newswire/doc-to-archieml/index.js
-index ca5c4d2..823466f 100644
+index ca5c4d2..e1394cc 100644
 --- a/node_modules/@newswire/doc-to-archieml/index.js
 +++ b/node_modules/@newswire/doc-to-archieml/index.js
-@@ -9,12 +9,21 @@ function readParagraphElement(element) {
+@@ -9,12 +9,22 @@ function readParagraphElement(element) {
    // sometimes it's not there, skip this all if so
    if (textRun) {
      // sometimes the content isn't there, and if so, make it an empty string
@@ -15,7 +15,8 @@ index ca5c4d2..823466f 100644
 +    // add inline style tags
 +    if (textRun.textStyle.italic) {
 +      content = content.replace(/([^\n]+)(\n)?/,'<i>$1</i>$2');
-+    } else if (textRun.textStyle.bold) {
++    }
++    if (textRun.textStyle.bold) {
 +      content = content.replace(/([^\n]+)(\n)?/,'<b>$1</b>$2');
 +    }
 +
