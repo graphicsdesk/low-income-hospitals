@@ -169,6 +169,17 @@ var finish = (function () {
     };
 })();
 
+var reload = (function () {
+    var executed = false;
+    return function () {
+        if (!executed) {
+            executed = true;
+            location.reload();
+
+        }
+    };
+})();
+
 var touch = function (event) {
     touchstartX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
@@ -263,7 +274,7 @@ function animationInstruct(e) {
             }
 
         }
-        
+
         if (curr == 1 && onPart == 1) {
             fadeText(onPart);
 
