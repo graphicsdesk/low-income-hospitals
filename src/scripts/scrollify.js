@@ -46,11 +46,12 @@ var fadegrey = (function () {
     var executed = false;
     return function () {
         if (!executed) {
-            selectAll(".g-cstyle0")
+            selectAll(".dis")
                 .transition()
                 .delay(1000)
                 .style("transition", "2s")
-                .style("color", "#4D4D4D");
+                .style("color", "#FFFFFF")
+                .style("background-color", "#ff073a");
         }
     };
 })();
@@ -116,8 +117,16 @@ function enable(_callback) {
     canGo = false;
     $.scrollify.enable();
     _callback();
+
 }
 
+function jump(_callback) {
+    // do some asynchronous work
+    // and when the asynchronous stuff is complete
+    selectAll(".makeInv")
+        .style("display", "none")
+    _callback();
+}
 var goBack = function () {
     if (canGo) {
         enable(function () {
@@ -164,10 +173,15 @@ var finish = (function () {
                 .classed("fadeblack", false)
             executed = true;
             canGo = false;
-            enable(function () {
-                onPart = 6;
-                $.scrollify.move(3);
-                $.scrollify.disable();
+            jump(function () {
+                setTimeout(() => {
+                    enable(function () {
+                        onPart = 6;
+                        $.scrollify.move(3);
+                        $.scrollify.disable();
+                    })
+                }, 100);
+
             })
         }
     };
@@ -240,7 +254,7 @@ function handleGesture() {
 
             fadePoints()
 
-            if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
+            if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
                 setTimeout(() => { onPart = 5; }, delay)
             }
 
@@ -303,7 +317,7 @@ function animationInstruct(e) {
 
             fadePoints();
 
-            if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
+            if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
                 setTimeout(() => { onPart = 5; }, delay)
             }
 
@@ -329,6 +343,12 @@ function animationInstruct(e) {
 
 }
 
+for (var i = 1; i < 8; i++) {
+    selectAll(".textFade" + i)
+        .classed("m-fadeIn", false)
+        .classed("m-fadeOut", true);
+}
+
 window.addEventListener('wheel', handle);
 
 
@@ -338,6 +358,7 @@ window.addEventListener('wheel', handle);
 
 
 function before(index, sections) {
+
     for (var i = 1; i < 8; i++) {
         selectAll(".textFade" + i)
             .classed("m-fadeIn", false)
@@ -376,10 +397,14 @@ function after(index, sections) {
     }
 
     if (index == 3) {
+
         $.scrollify.disable();
         $.scrollify.destroy();
         selectAll(".remove")
             .classed("snap", false)
+        selectAll(".makeInv")
+            .style("display", "none")
+        $.scrollify.move(3);
 
         window.removeEventListener("wheel", handle);
         window.removeEventListener("wheel", animationInstruct);
@@ -393,9 +418,6 @@ function after(index, sections) {
 function cleanup() {
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     document.getElementsByTagName("body")[0].style = "background-color:white;";
-
-    selectAll(".makeInv")
-        .style("display", "none")
     selectAll('.grey_point')  //here's how you get all the nodes
         .attr("fill", "#FFFFFF")
     selectAll('.grey_point_2')
