@@ -10,7 +10,7 @@ var curr = 0;
 var onPart = 0;
 var canGo = true;
 var delay = 500;
-var delay2 = 1500;
+var delay2 = 2000;
 var loading = false;
 let touchstartX = 0;
 let touchstartY = 0;
@@ -63,7 +63,7 @@ var fadePoints = (function () {
             executed = true;
             selectAll('.grey_point')
                 .each(function (d) {
-                    var vary = (Math.random() * 6000) + 1000;
+                    var vary = (Math.random() * 5000) + 1000;
                     select(this)
                         .transition()
                         .delay(vary)
@@ -71,7 +71,7 @@ var fadePoints = (function () {
                         .attr("fill", "#ff073a")
                         .transition()
                         .duration(500)
-                        .attr("fill", "#4D4D4D")
+                        .attr("fill", "#FFFFFF")
                 })
         }
     };
@@ -84,7 +84,7 @@ var fadePoints2 = (function () {
             executed = true;
             selectAll('.grey_point_2')
                 .each(function (d) {
-                    var vary = (Math.random() * 6000) + 1000;
+                    var vary = (Math.random() * 5000) + 1000;
                     select(this)
                         .transition()
                         .delay(vary)
@@ -92,7 +92,7 @@ var fadePoints2 = (function () {
                         .attr("fill", "#ff073a")
                         .transition()
                         .duration(500)
-                        .attr("fill", "#4D4D4D")
+                        .attr("fill", "#FFFFFF")
                 })
         }
     };
@@ -376,7 +376,9 @@ function after(index, sections) {
     }
 
     if (index == 3) {
+        $.scrollify.update({touchScroll: true})
         $.scrollify.destroy();
+        console.log("hi");
         goBack = 1;
         window.removeEventListener("wheel", handle, false);
         window.removeEventListener("touchstart", touch, false);
