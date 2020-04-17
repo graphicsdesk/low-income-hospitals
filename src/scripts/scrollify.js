@@ -254,7 +254,7 @@ function handleGesture() {
 
             fadePoints()
 
-            if (selectAll(".dis").style("color") == "rgb(225, 225, 225)") {
+            if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
                 setTimeout(() => { onPart = 5; }, delay)
             }
 
