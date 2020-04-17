@@ -33,6 +33,100 @@ if (window.screen.width < 750) {
     delay = 1500;
     delay2 = 5000;
 }
+
+let touchstartX = 0;
+let touchstartY = 0;
+let touchendX = 0;
+let touchendY = 0;
+
+
+window.addEventListener('touchstart', function (event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+window.addEventListener('touchend', function (event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+}, false);
+
+function handleGesture() {
+    if (touchendY >= touchstartY) {
+        // swipe down
+    }
+
+    if (touchendY <= touchstartY) {
+        if (onPart == 0) {
+            if (selectAll(".textFade1").style("opacity") == 1) {
+                setTimeout(() => { onPart = 1; }, 1500)
+            }
+        }
+        if (curr == 1 && onPart == 1) {
+            fadeText(onPart);
+            if (selectAll(".textFade2").style("opacity") == 1) {
+                setTimeout(() => { onPart = 2; }, delay)
+            }
+
+        } else if (curr == 1 && onPart == 2) {
+            fadeText(onPart);
+            if (selectAll(".textFade3").style("opacity") > 0.5) {
+                setTimeout(() => {
+                    something();
+                }, 500)
+            }
+
+        } else if (onPart == 3) {
+            if (selectAll(".textFade4").style("opacity") == 1) {
+                setTimeout(() => {
+                    onPart = 4;
+                }, 500)
+            }
+
+        } else if (curr == 2 && onPart == 4) {
+            fadeText(onPart);
+            selectAll(".g-cstyle0")
+                .transition()
+                .delay(1000)
+                .style("transition", "2s")
+                .style("color", "#4D4D4D");
+            selectAll(".article")
+                .classed("fadeblack", true)
+
+            selectAll('.grey_point')
+                .each(function (d) {
+                    var vary = (Math.random() * 7000) + 3000;
+                    select(this)
+                        .transition()
+                        .delay(vary)
+                        .duration(500)
+                        .attr("fill", "#4D4D4D")
+                })
+            if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
+                setTimeout(() => { onPart = 5; }, delay)
+            }
+
+        } else if (curr == 2 && onPart == 5) {
+            fadeText(onPart);
+
+            selectAll('.grey_point_2')
+                .each(function (d) {
+                    var vary = (Math.random() * 7000) + 3000;
+                    select(this)
+                        .transition()
+                        .delay(vary)
+                        .duration(500)
+                        .style("transition", "visibility 0s linear 0s, opacity 400ms")
+                        .style("fill", "#4D4D4D")
+                })
+            if (selectAll(".textFade6").style("opacity") == 1) {
+                setTimeout(() => { finish() }, delay2);
+            }
+
+        }
+    }
+}
+
 window.addEventListener('wheel', function (e) { animationInstruct(e) });
 
 function animationInstruct(e) {
