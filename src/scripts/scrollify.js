@@ -397,9 +397,9 @@ function cleanup() {
     selectAll(".makeInv")
         .style("display", "none")
     selectAll('.grey_point')  //here's how you get all the nodes
-        .attr("fill", "#4D4D4D")
+        .attr("fill", "#FFFFFF")
     selectAll('.grey_point_2')
-        .attr("fill", "#4D4D4D")
+        .attr("fill", "#FFFFFF")
     selectAll(".textFade6")
         .classed("m-fadeIn", true)
         .classed("m-fadeOut", false);
