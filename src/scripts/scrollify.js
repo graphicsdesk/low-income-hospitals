@@ -163,6 +163,7 @@ var finish = (function () {
                 .classed("fadeblack", false)
             executed = true;
             enable(function () {
+                onPart = 4;
                 $.scrollify.move(3);
             })
         }
@@ -197,7 +198,8 @@ window.addEventListener('touchend', end, false);
 
 
 function handleGesture() {
-    if (touchendY >= touchstartY) {
+    if (touchendY >= touchstartY && onPart < 4) {
+        console.log(onPart);
         goBack();
     }
 
@@ -320,7 +322,7 @@ function animationInstruct(e) {
 
         }
 
-    } else if (e.deltaY < 0) {
+    } else if (e.deltaY < 0 && onPart < 4) {
         goBack();
     }
 
@@ -379,7 +381,6 @@ function after(index, sections) {
         window.removeEventListener("wheel", handle, false);
         window.removeEventListener("touchstart", touch, false);
         window.removeEventListener("touchend", end, false);
-        onPart = 4;
         cleanup();
     }
 
