@@ -2,20 +2,23 @@
 <!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.2" baseProfile="tiny" id="g-storytelling-woooooo-Artboard_1-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1350 750" xml:space="preserve">
 	<def>
-	<style>
+		<style>
 	 #Scroll_2_{
-animation: bounce 2s infinite;
+		-webkit-animation: bounce 2s infinite;
 	 }
 
-@keyframes bounce {
+	 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
+	-webkit-transform: translateY(0);
+
+}
   40% {
-    transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+
   }
   60% {
-    transform: translateY(-15px);
+	-webkit-transform: translateY(-15px);
+
   }
 }
 	 </style>
