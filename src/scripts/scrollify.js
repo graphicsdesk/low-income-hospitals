@@ -1,5 +1,5 @@
 
-import {scrollify} from "jquery-scrollify";
+import { scrollify } from "jquery-scrollify";
 import { select } from "d3-selection";
 import { selectAll } from "d3-selection";
 import "d3-transition";
@@ -33,7 +33,7 @@ function scrollify_init() {
         standardScrollElements: "",
         setHeights: false,
         overflowScroll: false,
-        updateHash: true,
+        updateHash: false,
         touchScroll: true,
         before: function (index, sections) { before(index, sections) },
         after: function (index, sections) { after(index, sections); curr = index },
@@ -280,6 +280,7 @@ function handleGesture() {
 
 
 function animationInstruct(e) {
+    console.log(onPart);
     if (e.deltaY > 0) {
         //scroll down
 

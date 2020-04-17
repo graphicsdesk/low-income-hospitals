@@ -177,7 +177,7 @@ body {
     }
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   .intro {
     .background {
       top: -10%;
@@ -201,7 +201,7 @@ body {
     top: -30px;
   }
   #g-ai2-1 {
-    top: 20% !important;
+    top: 15% !important;
   }
 
   .snap {
@@ -231,7 +231,21 @@ body {
   #g-ai3-30 {
     top: 50% !important;
   }
-
+  #g-ai2-2 {
+    top: 25% !important;
+  }
+  #g-ai2-3 {
+    top: 30% !important;
+  }
+  #g-ai2-4 {
+    top: 34% !important;
+  }
+  #g-ai2-5 {
+    top: 40% !important;
+  }
+  #g-ai2-6 {
+    top: 44% !important;
+  }
 
 }
 @media screen and (max-width: 400px) and (max-height: 625px) {
@@ -248,21 +262,6 @@ body {
   }
   .snap:not(.article) {
     height: 650px;
-  }
-  #g-ai2-2 {
-    top: 25% !important;
-  }
-  #g-ai2-3 {
-    top: 30% !important;
-  }
-  #g-ai2-4 {
-    top: 34% !important;
-  }
-  #g-ai2-5 {
-    top: 40% !important;
-  }
-  #g-ai2-6 {
-    top: 44% !important;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 600px) and (max-height: 800px) and (min-height: 625px) {
@@ -284,21 +283,7 @@ body {
   .snap:not(.article) {
     height: 650px;
   }
-  #g-ai2-2 {
-    top: 49% !important;
-  }
-  #g-ai2-3 {
-    top: 59% !important;
-  }
-  #g-ai2-4 {
-    top: 65% !important;
-  }
-  #g-ai2-5 {
-    top: 75% !important;
-  }
-  #g-ai2-6 {
-    top: 85% !important;
-  }
+
 }
 @media screen and (max-width: 600px) and (max-height: 850px) and (min-height: 750px) {
   //iPhone X
@@ -316,22 +301,16 @@ body {
   .snap:not(.article) {
     height: 700px;
   }
-  #g-ai2-2 {
-    top: 40% !important;
+}
+
+@media screen and (min-width: 1600px) {
+  .article {
+    margin-top:100px;
   }
-  #g-ai2-3 {
-    top: 50% !important;
-  }
-  #g-ai2-4 {
-    top: 54% !important;
-  }
-  #g-ai2-5 {
-    top: 62.5% !important;
-  }
-  #g-ai2-6 {
-    top: 71% !important;
-  }
-  #g-ai2-1 {
-    top:150px !important;
+  
+}
+@media screen and (min-height: 800px) {
+  .snap:not(.article) {
+    height: 850px;
   }
 }
