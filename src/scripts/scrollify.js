@@ -28,8 +28,10 @@ $(function () {
     });
 });
 var delay = 500;
+var delay2 = 1500;
 if (window.screen.width < 750) {
     delay = 1500;
+    delay2 = 4500;
 }
 window.addEventListener('wheel', function (e) { animationInstruct(e) });
 
@@ -83,7 +85,7 @@ function animationInstruct(e) {
                         .attr("fill", "#4D4D4D")
                 })
             if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
-                setTimeout(() => { onPart = 5; }, 500)
+                setTimeout(() => { onPart = 5; }, delay)
             }
 
         } else if (curr == 2 && onPart == 5) {
@@ -100,7 +102,7 @@ function animationInstruct(e) {
                         .style("fill", "#4D4D4D")
                 })
             if (selectAll(".textFade6").style("opacity") == 1) {
-                setTimeout(() => { finish() }, 1000);
+                setTimeout(() => { finish() }, delay2);
             }
 
         }
