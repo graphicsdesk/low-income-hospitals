@@ -1,4 +1,8 @@
 import resizer from './ai2html-resizer';
+import scrollify_init from './scrollify';
+var $ = require('jquery');
+
+  
 
 /* Scripts that should be on every Spectate page */
 
@@ -45,6 +49,7 @@ function hoistArticle() {
   }
 
   resizer();
+  scrollify_init();
 }
 
 // Runs hoistArticle() and stops RAF when necessary elements exist.

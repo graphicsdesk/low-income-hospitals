@@ -1,5 +1,5 @@
 
-import scrollify from "jquery-scrollify";
+import {scrollify} from "jquery-scrollify";
 import { select } from "d3-selection";
 import { selectAll } from "d3-selection";
 import "d3-transition";
@@ -21,8 +21,8 @@ if (window.screen.width < 750) {
     delay2 = 3000;
 }
 
+function scrollify_init() {
 
-$(function () {
     $.scrollify({
         section: ".snap",
         interstitialSection: "",
@@ -40,7 +40,11 @@ $(function () {
         afterResize: function () { },
         afterRender: function () { }
     });
-});
+
+}
+
+module.exports = scrollify_init;
+
 
 var fadegrey = (function () {
     var executed = false;
@@ -51,7 +55,7 @@ var fadegrey = (function () {
                 .delay(1000)
                 .style("transition", "2s")
                 .style("color", "#FFFFFF")
-                .style("background-color", "#ff073a");
+                .style("background-color", "#D13938");
         }
     };
 })();
