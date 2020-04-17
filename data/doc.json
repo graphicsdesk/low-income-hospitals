@@ -1,21 +1,135 @@
 {
-  "headline": "Filler",
-  "date": "April 15, 2020",
-  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a> and <a href=\"https://www.columbiaspectator.com/contributors/Dia-Gill/\">Dia Gill</a>\nData reporting and graphics by <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> and <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a>\nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
+  "headline": "Black residents are more likely to be sick. Hospitals are disincentivized from treating them.",
+  "date": "April 17, 2020",
+  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Valeria-Escobar/\">Valeria Escobar</a>\nData reporting and graphics by <a href=\"https://www.columbiaspectator.com/contributors/Mike-Fu/\">Mike Fu</a> and <a href=\"http://columbiaspectator.com/contributors/Raeedah-Wahid/\">Raeedah Wahid</a>\nProduced by <a href=\"https://www.columbiaspectator.com/contributors/Hong-Sen-Du/\">Hong Sen Du</a>",
   "body": [
     {
       "type": "text",
-      "value": "Body text"
+      "value": "In the 1890’s, Mt. Sinai Morningside and Columbia committed to keeping Morningside Heights white and wealthy. One local paper praised the steepness of Morningside Park for “[safeguarding] … whatever stands on the plateau behind it.” What happens when the neighborhood founded on the exclusion of Black people has the only hospital in West Harlem?"
+    },
+    {
+      "type": "text",
+      "value": "In the 19th century, the prospect of controlling the blueprint to transform Upper Manhattan—which previously avoided development with the exception of some working-class neighborhoods—would cause Democrats and Republicans to rally their supporters in a fight for the New York City that exists to this day."
+    },
+    {
+      "type": "text",
+      "value": "Owned by the New York Hospital, the land that is now Columbia’s Morningside campus was home to the Bloomingdale Insane Asylum—a hospital that served a small number of affluent, mentally ill patients. Democrats claimed that the land should be repurposed to serve more people—attracting the support of poor residents, immigrants, and wealthy developers."
+    },
+    {
+      "type": "text",
+      "value": "But the hospital eventually sold its property to an equally exclusive institution—Columbia University. Barnard, Teacher’s College, Cathedral of St. John’s the Divine, and Mount Sinai Morningside hospital would later join the surrounding neighborhood. To buy the land, these five institutions had to agree to the following: a 20-year ban of manufacturing plants, “dangerous or offensive trade,” and tenement housing. Without manufacturing jobs or affordable housing, it would have been impossible for Black people to live there."
+    },
+    {
+      "type": "text",
+      "value": "“The precipitous bluff that has been converted into Morningside Park is a safeguard for whatever stands on the plateau behind it,” one paper wrote about measures taken by Morningside Heights to avoid the predominance of Black residents in Harlem."
+    },
+    {
+      "type": "text",
+      "value": "Harlem would grow increasingly Black, but sale to the five institutions ensured that Morningside Heights would be an enclave of rich, white residents."
+    },
+    {
+      "type": "text",
+      "value": "The ban has long expired. Harlem is still Black, <a href=\"https://statisticalatlas.com/neighborhood/New-York/New-York/Harlem/Race-and-Ethnicity \">working class</a>, and has a separate identity from Morningside Heights—where residents make 250 percent <a href=\"https://censusreporter.org/profiles/14000US36061020500-census-tract-205-new-york-ny/\">more</a>, are <a href=\"https://www.6sqft.com/maps-reveal-which-nyc-neighborhoods-have-the-highest-levels-of-air-pollution-day-versus-night/\">less vulnerable</a> to the City’s worst air quality, and are less likely to be a Medicaid patient. But between Fifth Avenue and Riverside Drive and between 56th Street and 138th Street, Mount Sinai Morningside—a private hospital—provides the only source of critical medical care."
     },
     {
       "type": "graphic",
       "value": {
-        "asset": "x.html"
+        "asset": "income-levels.html"
       }
     },
     {
       "type": "text",
-      "value": "<i>Valeria Escobar</i><i> is a News editor at Spectator. She can be contacted at </i><a href=\"mailto:valeria.escobar@columbiaspectator.com\"><i>valeria.escobar@columbiaspectator.</i></a><a href=\"mailto:valeria.escobar@columbiaspectator.com\">com</a>. <i>(Optional: Follow X on Twitter @)"
+      "value": "The pandemic proved that American hospitals were not equipped to care for the influx of COVID-19 patients that would rush to emergency rooms. New York City has now confirmed about 10 percent of COVID-19 cases and 8 percent of all deaths on a worldwide scale. It is estimated that every day, 1,000 new hospital beds are needed to accommodate the growing patient populations."
+    },
+    {
+      "type": "text",
+      "value": "Today, the 54 hospitals remaining in the city have almost tripled their capacity. Makeshift tents for patients are now occupying Central Park; Javits Center; and soon, tennis courts, college dorms, and cruise ship terminals."
+    },
+    {
+      "type": "graphic",
+      "value": {
+        "asset": "beds.html"
+      }
+    },
+    {
+      "type": "text",
+      "value": "However, low-income Black New Yorkers have long anticipated the shortage of hospitals. Since 2000, 24 hospitals have closed, most of them in Black neighborhoods that serve high rates of uninsured or Medicaid patients, according to experts. Many have become <a href=\"https://ny.curbed.com/maps/10-nyc-sites-transforming-from-hospitals-to-housing-mapped\">luxury apartments</a>."
+    },
+    {
+      "type": "text",
+      "value": "While pandemics that cause mass shortages are unexpected, shortages of resources within Black communities are written into the American healthcare system."
+    },
+    {
+      "type": "text",
+      "value": "Hospital emergency rooms cannot “patient dump,” meaning anybody can receive urgent care regardless of their ability to pay. If an uninsured patient receives treatment, the hospital picks up the entire bill. For Medicaid patients, the hospital only has to pay about 13 cents to the dollar, while the government pays the rest. In both of these instances, the hospital runs a deficit."
+    },
+    {
+      "type": "text",
+      "value": "On the flip side, for every dollar that hospitals spend on privately insured patients, they receive more than two dollars back—generating most of hospitals’ revenue."
+    },
+    {
+      "type": "text",
+      "value": "According to Darrell Gaskin, director of the Johns Hopkins Center for Health Disparities Solutions, our current medical system is “penalizing hospitals for high admissions rates.”"
+    },
+    {
+      "type": "text",
+      "value": "“The problem that those hospitals face is that they have limited resources because a high percentage of their patients are covered by Medicare. They don’t have the resources that other hospitals would have. More private pay patients and less uninsured and Medicaid,” Gaskin said."
+    },
+    {
+      "type": "text",
+      "value": "Not only do poor patients present a cost that is not financially viable for hospitals, they also on average require more care than privately insured patients. Black residents are segregated to more polluted and toxic areas, have harsher and inflexible workplace demands, and Medicaid <a href=\"https://eligibility.com/medicaid/what-services-does-medicaid-cover\">does not cover regular check-ups</a> in New York—meaning that these communities are on average sicker, will likely stay sick."
+    },
+    {
+      "type": "text",
+      "value": "A person who lives in Harlem—which is home to many of Manhattan's sewage plants and bus depots—is three times as likely to have asthma-related emergencies compared to other parts of the city. These circumstances have been reflected in the <a href=\"https://www.columbiaspectator.com/news/2020/04/08/black-deaths-lead-the-nations-number-of-pandemic-victims-while-the-cdc-has-yet-to-publish-ethnic-breakdown-of-infection-rate/\">high rates of Black deaths</a> from COVID-19, even though Black people are less likely to be tested in the first place."
+    },
+    {
+      "type": "text",
+      "value": "“Poor people have fewer resources to mitigate problems that come up in life. What we’ve done as a country is that we’ve made healthcare a commodity. People who are less able to gain access to that commodity suffer,” said Tulane University professor Thomas LaVeist."
+    },
+    {
+      "type": "text",
+      "value": "Under state social distancing regulations, low-wage workers—including grocery and drugstore clerks, delivery drivers and in-home care providers—have placed themselves at<a href=\"https://www.theatlantic.com/health/archive/2020/04/coronavirus-class-war-just-beginning/609919/\"> great risks of contracting COVID-19</a> at the frontlines of the pandemic. Dr. Jennifer Haas, Harvard Medical School and Harvard School of Public Health professor, noted that these populations are overwhelmingly composed of low-income Black people. Even with mass layoffs, the gig economy means that there is no shortage of opportunities for workers to take on low-wage jobs with high risks of infection."
+    },
+    {
+      "type": "text",
+      "value": "“There is a disportionate share for folks that are in wage jobs, including the gig economy, but those folks are in jobs where they don’t have benefits, paid time off, they may not have any insurance or generous insurance,” Haas said."
+    },
+    {
+      "type": "text",
+      "value": "Because low-wages are rarely sufficient for workers to live in the same affluent neighborhoods where they work, some essential workers must also commute to work across public transportation—the same service city officials have warned against utilizing to combat the spread of COVID-19."
+    },
+    {
+      "type": "text",
+      "value": "Public transportation is often also the only option for low-income residents seeking medical care. Residents within walking distance of Mt. Sinai Morningside in Morningside Heights—the 2010 census tract that spans 114th to 122nd streets and Broadway to Riverside Drive—make nearly six times the amount of those in Hamilton Heights."
+    },
+    {
+      "type": "graphic",
+      "value": {
+        "asset": "buffer.html"
+      }
+    },
+    {
+      "type": "text",
+      "value": "For residents of Morningside Heights, Mount Sinai Hospital and its urgent care is a short walk away. But for low-income Black residents in Harlem seeking critical care, distance, public transportation, and time away from work stand in the way of potentially life-saving procedures."
+    },
+    {
+      "type": "graphic",
+      "value": {
+        "asset": "transit.html"
+      }
+    },
+    {
+      "type": "text",
+      "value": "Before the economic collapse, LaVeist said that the distance from the hospital paired with the longer delay in public transportation could detract a resident from seeking urgent medical care. In a time when growing financial insecurity necessitates that low-income residents place themselves at risk of contracting the coronavirus, the segregation that has made communities vulnerable has also made healthcare financially inaccessible to those who need it most."
+    },
+    {
+      "type": "text",
+      "value": "“In an instance when a safety net hospital goes out of business, the health needs of the community don’t disappear,” LaVeist said."
+    },
+    {
+      "type": "text",
+      "value": "<i>Valeria Escobar</i><i> is a News editor at Spectator. She can be contacted at </i><a href=\"mailto:valeria.escobar@columbiaspectator.com\"><i>valeria.escobar@columbiaspectator.</i></a><a href=\"mailto:valeria.escobar@columbiaspectator.com\">com</a>. <i>Follow Spectator on Twitter at </i><a href=\"https://twitter.com/ColumbiaSpec?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\"><i>@ColumbiaSpec</i></a><i>."
     },
     {
       "type": "text",
@@ -23,7 +137,7 @@
     },
     {
       "type": "text",
-      "value": "<i>Dia Gill is a staff writer(?) at Spectator. She can be contacted at </i><a href=\"mailto:dia.gill@columbiaspectator.com\"><i>dia.gill@columbiaspectator.com</i></a>. <i>(Optional: Follow X on Twitter @)"
+      "value": "<i>Mike Fu is a Graphics reporter at Spectator. He can be contacted at </i><a href=\"mailto:mike.fu@columbiaspectator.com\"><i>mike.fu@columbiaspectator.com</i></a>. <i>"
     },
     {
       "type": "text",
@@ -39,14 +153,6 @@
     },
     {
       "type": "text",
-      "value": "</i><i>Mike Fu is a Graphics reporter at Spectator. He can be contacted at </i><a href=\"mailto:mike.fu@columbiaspectator.com\"><i>mike.fu@columbiaspectator.com</i></a>. <i>(Optional: Follow X on Twitter @)"
-    },
-    {
-      "type": "text",
-      "value": "</i><i>"
-    },
-    {
-      "type": "text",
       "value": "</i><i>Hong Sen Du is a developer at Spectator. He can be contacted at </i><a href=\"mailto:hongsen.du@columbiaspectator.com\"><i>hongsen.du@columbiaspectator.com</i></a><i>."
     },
     {
@@ -54,6 +160,5 @@
       "value": "</i>"
     }
   ],
-  "methodology": "<b>About the numbers</b>\n\nUsing <a href=\"https://developers.google.com/places/web-service/intro\">Google’s Place AP</a>I, we can convert an address of a hospital to its respective latitude and longitude. Since Open Data NTA Tabulation Areas represents each neighborhood as a polygon with vertices consisting of latitude and longitude, we can locate the neighborhood of each hospital using its latitude and longitude. We then retrieved the median income by zip code, and matched it with the corresponding neighborhood using the Place APi.\n\n\nTo determine the accessibility of a hospital by walking…\nUsed 0.2, 0.3, 0.5 mi\n0.3 representing walkable distance\n0.5 is overstretched\nAssumed variables from research: <a href=\"https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=5148&context=etd\">https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=5148&context=etd</a> \n\nThere may be discrepancies between the numbers of beds reported by NY State Department of Health and hospitals themselves. Spectator did not represent updated hospital bed numbers as a result of the COVID-19 outbreak because numbers are in constant flux. \n\nView our data collection and analysis <a href=\"https://github.com/spec-journalism/hospital-data\">here</a>.\n\nText",
-  "footer": "Produced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team."
+  "footer": "Data on the numbers of beds reported by <a href=\"https://profiles.health.ny.gov/hospital/alpha\">NY State Department of Health</a>, which was utilized in the reporting above, differs slightly from those reported by hospitals themselves. Spectator did not represent updated hospital bed numbers as a result of the COVID-19 outbreak because this data is subject to rapid change. \n\nNeighborhood and transit shapefiles were retrieved from <a href=\"https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas-NTA-/cpf4-rkhq\">NYC Open Data</a> and the <a href=\"https://www.baruch.cuny.edu/confluence/pages/viewpage.action?pageId=28016896\">GIS Lab at the Newman Library of Baruch College, CUNY</a>, respectively.\n\n\n\nProduced with <a href=\"https://github.com/spec-journalism/spectate/\">Spectate</a> by the Spectator <a href=\"https://github.com/spec-journalism\">Graphics</a> team."
 }

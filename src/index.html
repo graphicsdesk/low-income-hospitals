@@ -28,20 +28,6 @@
     <include src="graphic2.html"></include>
   </div>
 
-  <div class="story-top">
-    <div class="inside">
-      <each loop="item in top">
-        <switch expression="item.type">
-          <case n="'graphic'">
-            <div class="graphic">
-              <if condition="item.value.asset === 'graphic-name.html'">
-                <include src="graphic-name.html"></include>
-              </if>
-            </div>
-          </case>
-        </switch>
-      </each>
-    </div>
     <div class="snap article">
       <if condition="USE_COVER_HED">
         <include src="partials/header-cover.html"></include>
@@ -64,8 +50,17 @@
             </case>
             <case n="'graphic'">
               <div class="graphic">
-                <if condition="item.value.asset === 'graphic-name.html'">
-                  <include src="graphic-name.html"></include>
+                <if condition="item.value.asset === 'income-levels.html'">
+                  <include src="./income-levels.html"></include>
+                </if>
+                <if condition="item.value.asset === 'beds.html'">
+                  <include src="./beds.html"></include>
+                </if>
+                <if condition="item.value.asset === 'buffer.html'">
+                  <include src="./buffer.html"></include>
+                </if>
+                <if condition="item.value.asset === 'transit.html'">
+                  <include src="./transit.html"></include>
                 </if>
               </div>
             </case>
