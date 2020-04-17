@@ -51,82 +51,84 @@ window.addEventListener('touchend', function (event) {
     handleGesture();
 }, false);
 
-function handleGesture() {
-    if (touchendY >= touchstartY) {
-        goBack();
-    }
 
-    if (touchendY <= touchstartY) {
-        if (onPart == 0) {
-            if (selectAll(".textFade1").style("opacity") == 1) {
-                onPart = 1;
+    function handleGesture() {
+        if (touchendY >= touchstartY) {
+            goBack();
+        }
+
+        if (touchendY <= touchstartY) {
+            if (onPart == 0) {
+                if (selectAll(".textFade1").style("opacity") == 1) {
+                    onPart = 1;
+                }
+            }
+            if (curr == 1 && onPart == 1) {
+                fadeText(onPart);
+                if (selectAll(".textFade2").style("opacity") == 1) {
+                    onPart = 2;
+                }
+
+            } else if (curr == 1 && onPart == 2) {
+                fadeText(onPart);
+                if (selectAll(".textFade3").style("opacity") > 0.5) {
+                    onPart = 3;
+                    something();
+                }
+
+            } else if (onPart == 3) {
+                if (selectAll(".textFade4").style("opacity") == 1) {
+                    onPart = 4;
+                }
+
+            } else if (curr == 2 && onPart == 4) {
+                fadeText(onPart);
+                selectAll(".g-cstyle0")
+                    .transition()
+                    .delay(1000)
+                    .style("transition", "2s")
+                    .style("color", "#4D4D4D");
+                selectAll(".article")
+                    .classed("fadeblack", true)
+
+                selectAll('.grey_point')
+                    .each(function (d) {
+                        var vary = (Math.random() * 7000) + 3000;
+                        select(this)
+                            .transition()
+                            .delay(vary)
+                            .duration(500)
+                            .attr("fill", "#4D4D4D")
+                    })
+                if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
+                    setTimeout(() => { onPart = 5; }, delay)
+                }
+
+            } else if (curr == 2 && onPart == 5) {
+                fadeText(onPart);
+
+                selectAll('.grey_point_2')
+                    .each(function (d) {
+                        var vary = (Math.random() * 7000) + 3000;
+                        select(this)
+                            .transition()
+                            .delay(vary)
+                            .duration(500)
+                            .style("transition", "visibility 0s linear 0s, opacity 400ms")
+                            .style("fill", "#4D4D4D")
+                    })
+                if (selectAll(".textFade6").style("opacity") == 1) {
+                    setTimeout(() => { finish() }, delay2);
+                }
+
             }
         }
-        if (curr == 1 && onPart == 1) {
-            fadeText(onPart);
-            if (selectAll(".textFade2").style("opacity") == 1) {
-                onPart = 2;
-            }
-
-        } else if (curr == 1 && onPart == 2) {
-            fadeText(onPart);
-            if (selectAll(".textFade3").style("opacity") > 0.5) {
-                onPart = 3;
-                something();
-            }
-
-        } else if (onPart == 3) {
-            if (selectAll(".textFade4").style("opacity") == 1) {
-                onPart = 4;
-            }
-
-        } else if (curr == 2 && onPart == 4) {
-            fadeText(onPart);
-            selectAll(".g-cstyle0")
-                .transition()
-                .delay(1000)
-                .style("transition", "2s")
-                .style("color", "#4D4D4D");
-            selectAll(".article")
-                .classed("fadeblack", true)
-
-            selectAll('.grey_point')
-                .each(function (d) {
-                    var vary = (Math.random() * 7000) + 3000;
-                    select(this)
-                        .transition()
-                        .delay(vary)
-                        .duration(500)
-                        .attr("fill", "#4D4D4D")
-                })
-            if (selectAll(".dis").style("color") == "rgb(77, 77, 77)") {
-                setTimeout(() => { onPart = 5; }, delay)
-            }
-
-        } else if (curr == 2 && onPart == 5) {
-            fadeText(onPart);
-
-            selectAll('.grey_point_2')
-                .each(function (d) {
-                    var vary = (Math.random() * 7000) + 3000;
-                    select(this)
-                        .transition()
-                        .delay(vary)
-                        .duration(500)
-                        .style("transition", "visibility 0s linear 0s, opacity 400ms")
-                        .style("fill", "#4D4D4D")
-                })
-            if (selectAll(".textFade6").style("opacity") == 1) {
-                setTimeout(() => { finish() }, delay2);
-            }
-
-        }
     }
-}
 var loading = false;
 
-window.addEventListener('wheel', function (e) { if (!loading) { loading = true; animationInstruct(e); loading = false } });
+window.addEventListener('wheel', handle);
 
+var handle = function (e) { if (!loading) { loading = true; animationInstruct(e); loading = false } }
 function animationInstruct(e) {
     if (e.deltaY > 0) {
         //scroll down
@@ -139,7 +141,7 @@ function animationInstruct(e) {
         if (curr == 1 && onPart == 1) {
             fadeText(onPart);
             if (selectAll(".textFade2").style("opacity") == 1) {
-                onPart = 2;
+                setTimeout(() => { onPart = 2 }, delay);
             }
 
         } else if (curr == 1 && onPart == 2) {
@@ -197,6 +199,7 @@ function animationInstruct(e) {
         }
 
     } else if (e.deltaY < 0) {
+        console.log("boi");
         goBack();
     }
 
@@ -220,7 +223,7 @@ var goBack = function () {
         });
         setTimeout(function () {
             canGo = true;
-        }, 4000)
+        }, 1000)
     } else {
     }
 }
@@ -253,7 +256,7 @@ var something = (function () {
         $.scrollify.enable();
         setTimeout(function () {
             canGo = true;
-        }, 2000)
+        }, 1000)
     } else {
     }
 })
@@ -303,7 +306,8 @@ function checkInstant(index, sections) {
     }
 
     if (index == 3) {
-        $.scrollify.disable();
+        onPart = 4;
+        $.scrollify.destroy();
         cleanup();
     }
 
@@ -311,8 +315,7 @@ function checkInstant(index, sections) {
 
 function cleanup() {
     canGo = false;
-    window.removeEventListener("window", animationInstruct);
-    window.removeEventListener("window", handleGesture);
+    window.removeEventListener("window", handle);
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     selectAll(".makeInv")
         .style("display", "none")
