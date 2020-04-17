@@ -198,7 +198,7 @@ function checkInstant(index, sections) {
 
 function cleanup() {
     window.removeEventListener("window", animationInstruct);
-    document.getElementsByTagName("body")[0].style = "overflow: visible !important";
+    document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     selectAll(".makeInv")
         .style("display", "none")
     selectAll('.grey_point')  //here's how you get all the nodes
