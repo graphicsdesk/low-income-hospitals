@@ -9,10 +9,10 @@ var $ = require('jquery');
 
 
 $(document).ready(function () {
-  selectAll('.point')  //here's how you get all the nodes
+  selectAll('.point') 
     .style("opacity", "0")
 
-  selectAll('.grey_point')  //here's how you get all the nodes
+  selectAll('.grey_point')  
     .attr("fill", "#D13938")
 });
 
