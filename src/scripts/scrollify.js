@@ -16,11 +16,14 @@ let touchstartY = 0;
 let touchendX = 0;
 let touchendY = 0;
 
+// handle differences in load time on mobile vs desktop
 if (window.screen.width < 750) {
     delay = 1500;
     delay2 = 5000;
 }
 
+
+// reset scrolly
 $(window).on('load', function () {
     setTimeout(function () {
         $(window).scrollTop(0);
@@ -52,7 +55,7 @@ function scrollify_init() {
 
 module.exports = scrollify_init;
 
-
+// fade text
 var fadegrey = (function () {
     var executed = false;
     return function () {
@@ -67,6 +70,7 @@ var fadegrey = (function () {
     };
 })();
 
+// fade first set of points
 var fadePoints = (function () {
     var executed = false;
     return function () {
@@ -88,6 +92,7 @@ var fadePoints = (function () {
     };
 })();
 
+// fade second set
 var fadePoints2 = (function () {
     var executed = false;
     return function () {
@@ -107,7 +112,6 @@ var fadePoints2 = (function () {
 })();
 
 
-
 var handle = function (e) {
     if (!loading) {
         loading = true;
@@ -117,11 +121,6 @@ var handle = function (e) {
 }
 
 function enable(_callback) {
-    // do some asynchronous work
-    // and when the asynchronous stuff is complete
-    if (curr == 3) {
-        return 0;
-    }
     canGo = false;
     $.scrollify.enable();
     _callback();
@@ -129,8 +128,6 @@ function enable(_callback) {
 }
 
 function jump(_callback) {
-    // do some asynchronous work
-    // and when the asynchronous stuff is complete
     selectAll(".makeInv")
         .style("display", "none")
     _callback();
@@ -149,7 +146,7 @@ var goBack = function () {
 
 
 function fadeText(onPart) {
-    var newPart = onPart + 1;
+    let newPart = onPart + 1;
     selectAll(".textFade" + onPart)
         .classed("m-fadeIn", false)
         .classed("m-fadeOut", true);
@@ -168,7 +165,6 @@ var nextSlide = (function () {
         setTimeout(function () {
             canGo = true;
         }, 1000)
-    } else {
     }
 })
 
@@ -204,14 +200,13 @@ var touch = function (event) {
     touchstartY = event.changedTouches[0].screenY;
 }
 
-window.addEventListener('touchstart', touch, false);
-
 var end = function (event) {
     touchendX = event.changedTouches[0].screenX;
     touchendY = event.changedTouches[0].screenY;
     handleGesture();
 }
 
+window.addEventListener('touchstart', touch, false);
 window.addEventListener('touchend', end, false);
 
 
@@ -221,65 +216,7 @@ function handleGesture() {
     }
 
     if (touchendY <= touchstartY) {
-
-        if (onPart == 0) {
-
-            if (selectAll(".textFade1").style("opacity") == 1) {
-                onPart = 1;
-            }
-
-        }
-
-        if (curr == 1 && onPart == 1) {
-
-            fadeText(onPart);
-
-            if (selectAll(".textFade2").style("opacity") == 1) {
-                onPart = 2;
-            }
-
-        } else if (curr == 1 && onPart == 2) {
-
-            fadeText(onPart);
-
-            if (selectAll(".textFade3").style("opacity") > 0.5) {
-                onPart = 3;
-                nextSlide();
-            }
-
-        } else if (onPart == 3) {
-            selectAll(".article")
-                .classed("fadeblack", true)
-
-            if (selectAll(".textFade4").style("opacity") == 1) {
-                onPart = 4;
-            }
-
-        } else if (curr == 2 && onPart == 4) {
-
-            fadeText(onPart);
-
-            fadegrey();
-
-            fadePoints()
-
-            if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
-                setTimeout(() => { onPart = 5; }, delay)
-            }
-
-        } else if (curr == 2 && onPart == 5) {
-
-            fadeText(onPart);
-
-            fadePoints2()
-
-            if (selectAll(".textFade6").style("opacity") == 1)
-                setTimeout(() => { onPart = 6; finish() }, delay2);
-        }
-        else {
-            onPart = 6;
-        }
-
+        handleParts();
     }
 }
 
@@ -288,62 +225,7 @@ function animationInstruct(e) {
     if (e.deltaY > 0) {
         //scroll down
 
-        if (onPart == 0) {
-
-            if (selectAll(".textFade1").style("opacity") == 1) {
-                onPart = 1;
-            }
-
-        }
-
-        if (curr == 1 && onPart == 1) {
-            fadeText(onPart);
-
-            if (selectAll(".textFade2").style("opacity") == 1) {
-                setTimeout(() => { onPart = 2 }, delay);
-            }
-
-        } else if (curr == 1 && onPart == 2) {
-            fadeText(onPart);
-
-            if (selectAll(".textFade3").style("opacity") > 0.5) {
-                onPart = 3;
-                nextSlide();
-            }
-
-        } else if (onPart == 3) {
-            if (selectAll(".textFade4").style("opacity") == 1) {
-                onPart = 4;
-            }
-
-        } else if (curr == 2 && onPart == 4) {
-            fadeText(onPart);
-
-            fadegrey();
-
-            selectAll(".article")
-                .classed("fadeblack", true)
-
-            fadePoints();
-
-            if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
-                setTimeout(() => { onPart = 5; }, delay)
-            }
-
-        } else if (curr == 2 && onPart == 5) {
-            fadeText(onPart);
-
-            fadePoints2();
-
-            if (selectAll(".textFade6").style("opacity") == 1) {
-                setTimeout(() => {
-                    onPart = 6; finish();
-                }, delay2);
-            }
-
-        } else {
-            onPart = 6;
-        }
+        handleParts();
 
     } else if (e.deltaY < 0 && onPart != 6) {
         goBack();
@@ -352,10 +234,59 @@ function animationInstruct(e) {
 
 }
 
-for (var i = 1; i < 8; i++) {
-    selectAll(".textFade" + i)
-        .classed("m-fadeIn", false)
-        .classed("m-fadeOut", true);
+function handleParts() {
+
+    if (onPart == 0) {
+        if (selectAll(".textFade1").style("opacity") == 1) {
+            onPart = 1;
+        }
+    }
+
+    if (curr == 1 && onPart == 1) {
+        fadeText(onPart);
+
+        if (selectAll(".textFade2").style("opacity") == 1) {
+            setTimeout(() => { onPart = 2 }, delay);
+        }
+
+    } else if (curr == 1 && onPart == 2) {
+        fadeText(onPart);
+
+        if (selectAll(".textFade3").style("opacity") > 0.5) {
+            onPart = 3;
+            nextSlide();
+        }
+
+    } else if (onPart == 3) {
+        selectAll(".article")
+        .classed("fadeblack", true)
+
+        if (selectAll(".textFade4").style("opacity") == 1) {
+            onPart = 4;
+        }
+
+    } else if (curr == 2 && onPart == 4) {
+        fadeText(onPart);
+        fadegrey();
+        fadePoints();
+
+        if (selectAll(".dis").style("color") == "rgb(255, 255, 255)") {
+            setTimeout(() => { onPart = 5; }, delay)
+        }
+
+    } else if (curr == 2 && onPart == 5) {
+        fadeText(onPart);
+        fadePoints2();
+
+        if (selectAll(".textFade6").style("opacity") == 1) {
+            setTimeout(() => {
+                onPart = 6; finish();
+            }, delay2);
+        }
+
+    } else {
+        onPart = 6;
+    }
 }
 
 window.addEventListener('wheel', handle);
@@ -367,21 +298,19 @@ window.addEventListener('wheel', handle);
 
 
 function before(index, sections) {
-
-    for (var i = 1; i < 8; i++) {
-        selectAll(".textFade" + i)
-            .classed("m-fadeIn", false)
-            .classed("m-fadeOut", true);
-    }
+    
 }
 
 function after(index, sections) {
-
+    console.log(onPart);
     if (index == 0) {
         $.scrollify.enable();
+        onPart = 0;
     }
 
     if (index == 1) {
+        onPart = 0;
+        $.scrollify.disable();
         selectAll(".textFade1")
             .classed("m-fadeIn", true)
             .classed("m-fadeOut", false);
@@ -393,8 +322,6 @@ function after(index, sections) {
                     .style("transition-delay", vary)
                     .style("opacity", "1");
             });
-        onPart = 0;
-        $.scrollify.disable();
     }
 
     if (index == 2) {
@@ -406,9 +333,9 @@ function after(index, sections) {
     }
 
     if (index == 3) {
-
         $.scrollify.disable();
         $.scrollify.destroy();
+
         selectAll(".remove")
             .classed("snap", false)
 
@@ -424,7 +351,7 @@ function after(index, sections) {
 function cleanup() {
     document.getElementsByTagName("body")[0].style = "overflow: visible !important;";
     document.getElementsByTagName("body")[0].style = "background-color:white;";
-    selectAll('.grey_point')  //here's how you get all the nodes
+    selectAll('.grey_point')
         .attr("fill", "#FFFFFF")
     selectAll('.grey_point_2')
         .attr("fill", "#FFFFFF")
@@ -434,6 +361,7 @@ function cleanup() {
     selectAll(".textFade7")
         .classed("m-fadeIn", true)
         .classed("m-fadeOut", false);
+
     if ((selectAll(".snap").style("height")) == "1500px") {
         selectAll(".snap").style("remove", "1100px");
     }
