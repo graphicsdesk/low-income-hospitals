@@ -1,8 +1,5 @@
 import resizer from './ai2html-resizer';
 import scrollify_init from './scrollify';
-var $ = require('jquery');
-
-  
 
 /* Scripts that should be on every Spectate page */
 
@@ -48,8 +45,7 @@ function hoistArticle() {
     suspectParagraph.style.margin = 0;
   }
 
-  resizer();
-  scrollify_init();
+  init();
 }
 
 // Runs hoistArticle() and stops RAF when necessary elements exist.
@@ -80,5 +76,10 @@ function ready(timestamp) {
 if (isOnSpectatorPage) {
   window.requestAnimationFrame(ready);
 } else {
+  init();
+}
+
+function init() {
   resizer();
+  scrollify_init();
 }
