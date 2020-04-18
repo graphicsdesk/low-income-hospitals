@@ -21,18 +21,6 @@ function init() {
         el.style.display = "none";
       }
     });
-    try {
-      if (window.parent && window.parent.$) {
-        window.parent.$("body").trigger("resizedcontent", [window]);
-      }
-      if (window.require) {
-        require(['foundation/main'], function () {
-          require(['shared/interactive/instances/app-communicator'], function (AppCommunicator) {
-            AppCommunicator.triggerResize();
-          });
-        });
-      }
-    } catch (e) { console.log(e); }
   }
   document.addEventListener('DOMContentLoaded', resizer);
   // feel free to replace throttle with _.throttle, if available
