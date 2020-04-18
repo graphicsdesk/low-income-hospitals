@@ -16,6 +16,9 @@ body {
   color: red;
 }
 
+.headline {
+  font-family: 'Playfair Display', serif;
+}
 .intro {
   background-color: black;
   height: 100%;
@@ -191,7 +194,7 @@ body {
     }
     #scroll {
       top: 65%;
-      font-size: 26px;
+      font-size: 24px;
     }
   }
   #g-mobile-lead-Artboard_4,
@@ -254,7 +257,7 @@ body {
       top: 64.5% !important;
     }
     #scroll {
-      top: 67% !important;
+      top: 70% !important;
     }
   }
   .snap:not(.article) {
@@ -270,7 +273,7 @@ body {
       top: 65% !important;
     }
     #scroll {
-      top: 68% !important;
+      top: 72% !important;
     }
   }
   #g-ai3-1,
@@ -290,7 +293,7 @@ body {
       top: 64% !important;
     }
     #scroll {
-      top: 70% !important;
+      top: 80% !important;
     }
   }
 
@@ -301,7 +304,7 @@ body {
 
 @media screen and (min-width: 1600px) {
   .article {
-    margin-top: 100px;
+    margin-top: 75px;
   }
 }
 @media screen and (min-height: 800px) {
@@ -316,6 +319,16 @@ body {
   #g-beds-mobile,
   #g-buffer-mobile,
   #g-mobile-lead-Artboard_1_copy_2-img {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 750px) and (min-width:0px) {
+  #g-storytelling-woooooo-Artboard_2,
+  #g-income-levels-desktop-tablet,
+  #g-beds-desktop-tablet,
+  #g-buffer-desktop-tablet,
+  #g-storytelling-woooooo-Artboard_18,
+  #g-storytelling-woooooo-Artboard_18-box {
     display: none !important;
   }
 }

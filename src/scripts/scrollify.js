@@ -21,6 +21,13 @@ if (window.screen.width < 750) {
     delay2 = 3000;
 }
 
+$(window).on('load', function () {
+    setTimeout(function () {
+        $(window).scrollTop(0);
+        onPart = 0;
+    });
+});
+
 function scrollify_init() {
 
     $.scrollify({
@@ -38,7 +45,7 @@ function scrollify_init() {
         before: function (index, sections) { before(index, sections) },
         after: function (index, sections) { after(index, sections); curr = index },
         afterResize: function () { },
-        afterRender: function () { }
+        afterRender: function () { $.scrollify.move(0); onPart = 0; }
     });
 
 }
@@ -92,9 +99,6 @@ var fadePoints2 = (function () {
                     select(this)
                         .transition()
                         .delay(vary)
-                        .duration(500)
-                        .attr("fill", "#ff073a")
-                        .transition()
                         .duration(500)
                         .attr("fill", "#FFFFFF")
                 })
@@ -181,8 +185,11 @@ var finish = (function () {
                 setTimeout(() => {
                     enable(function () {
                         onPart = 6;
-                        $.scrollify.move(3);
-                        $.scrollify.disable();
+                        if (selectAll(".makeInv").style("display") == "none") {
+                            $.scrollify.instantMove(3);
+                            document.getElementsByClassName("article")[0].scrollIntoView();
+                            $.scrollify.disable();
+                        }
                     })
                 }, 100);
 
@@ -209,7 +216,6 @@ window.addEventListener('touchend', end, false);
 
 
 function handleGesture() {
-    console.log(onPart);
     if (touchendY >= touchstartY && onPart != 6) {
         goBack();
     }
@@ -242,6 +248,8 @@ function handleGesture() {
             }
 
         } else if (onPart == 3) {
+            selectAll(".article")
+                .classed("fadeblack", true)
 
             if (selectAll(".textFade4").style("opacity") == 1) {
                 onPart = 4;
@@ -252,9 +260,6 @@ function handleGesture() {
             fadeText(onPart);
 
             fadegrey();
-
-            selectAll(".article")
-                .classed("fadeblack", true)
 
             fadePoints()
 
@@ -280,7 +285,6 @@ function handleGesture() {
 
 
 function animationInstruct(e) {
-    console.log(onPart);
     if (e.deltaY > 0) {
         //scroll down
 
@@ -407,9 +411,6 @@ function after(index, sections) {
         $.scrollify.destroy();
         selectAll(".remove")
             .classed("snap", false)
-        selectAll(".makeInv")
-            .style("display", "none")
-        $.scrollify.move(3);
 
         window.removeEventListener("wheel", handle);
         window.removeEventListener("wheel", animationInstruct);
