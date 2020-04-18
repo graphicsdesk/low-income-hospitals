@@ -9,11 +9,19 @@ var $ = require('jquery');
 
 
 $(document).ready(function () {
+
+  for (var i = 1; i < 8; i++) {
+    selectAll(".textFade" + i)
+        .classed("m-fadeIn", false)
+        .classed("m-fadeOut", true);
+}
+
   selectAll('.point') 
     .style("opacity", "0")
 
   selectAll('.grey_point')  
     .attr("fill", "#D13938")
+    
 });
 
 
