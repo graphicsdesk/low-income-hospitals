@@ -7,7 +7,11 @@
 
 body {
   // Arc's overflow hidden on <body> messes up position sticky
-  background-color: black;
+  // background-color: black;
+}
+
+.snap:not(.article) {
+  display: none;
 }
 
 .graphic-name {
