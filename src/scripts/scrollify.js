@@ -1,9 +1,8 @@
-
 import { scrollify } from "jquery-scrollify";
 import { select } from "d3-selection";
 import { selectAll } from "d3-selection";
 import "d3-transition";
-var $ = require('jquery');
+import $ from 'jquery';
 
 var curr = 0;
 var onPart = 0;
@@ -36,7 +35,7 @@ function scrollify_init() {
         easing: "easeOutExpo",
         scrollSpeed: 1200,
         offset: 0,
-        scrollbars: false,
+        scrollbars: true,
         standardScrollElements: "",
         setHeights: false,
         overflowScroll: false,
@@ -438,4 +437,3 @@ function cleanup() {
         selectAll(".snap").style("remove", "1100px");
     }
 }
-
