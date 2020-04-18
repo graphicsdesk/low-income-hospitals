@@ -81,5 +81,5 @@ if (isOnSpectatorPage) {
 
 function init() {
   resizer();
-  // scrollify_init();
+  scrollify_init();
 }
