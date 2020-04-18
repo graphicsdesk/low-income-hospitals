@@ -18,7 +18,7 @@ let touchendY = 0;
 
 if (window.screen.width < 750) {
     delay = 1500;
-    delay2 = 3000;
+    delay2 = 5000;
 }
 
 $(window).on('load', function () {
