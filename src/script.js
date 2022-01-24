@@ -3,12 +3,15 @@ import textBalancer from 'text-balancer';
 import { USE_COVER_HED, USE_EYE_NAV } from '../config.json';
 import './scripts/page';
 import './scripts/scrollify';
-import { select } from 'd3-selection';
 import { selectAll } from 'd3-selection';
+import initiatePage from './scripts/page';
+import { intersectTop } from './scripts/utils';
+import { spectate as spectateConfig } from '../package.json';
+
 var $ = require('jquery');
 
-
 $(document).ready(function () {
+  console.log("hi")
   selectAll('.point') 
     .style("opacity", "0")
 
@@ -17,20 +20,26 @@ $(document).ready(function () {
 });
 
 
+
+// Main page initiation
+
+initiatePage();
+
 // Fade in navbar at scroll trigger
 
 const navbar = document.getElementById('navbar');
 
-if (USE_COVER_HED || USE_EYE_NAV) {
-  enterView({
-    selector: USE_COVER_HED ? '.headline' : '.step-deck',
-    offset: USE_COVER_HED ? 1 : 0.957,
-    enter: () => {
-      navbar.classList.remove('only-logo');
+if (USE_EYE_NAV || USE_COVER_HED) {
+  intersectTop({
+    node: document.getElementById('headline'),
+    onEnter: () => {
+      navbar.classList.remove('only-eye-logo');
+      navbar.classList.remove('hide-news-navbar');
     },
-    exit: () => {
+    onExit: () => {
       navbar.classList.remove('show-nav-links');
-      navbar.classList.add('only-logo');
+      navbar.classList.add('only-eye-logo');
+      navbar.classList.add('hide-news-navbar');
     },
   });
 }
@@ -44,6 +53,5 @@ export function hamburgerTrigger() {
 // Text balance headline, deck, and image captions
 
 if (window.innerWidth <= 460) {
-  textBalancer.balanceText('.headline, .deck, .image-overlay .image-caption-text');
+  textBalancer.balanceText('#headline, .deck, .image-caption-text');
 }
-
